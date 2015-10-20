@@ -5,5 +5,12 @@ using System.Web;
 
 namespace garaget_2.Models {
     public class Vehicle {
+        public string VehicleType { get; set; }
+        public string RegNR { get; set; }
+        public string Color { get; set; }
+        public string Brand { get; set; }
+        public string Modell { get; set; }
+        public int NRofWheels { get; set; }
     }
+   
 }
