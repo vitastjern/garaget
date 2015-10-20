@@ -9,7 +9,7 @@ namespace garaget_2.Models {
         public string RegNR { get; set; }
         public string Color { get; set; }
         public string Brand { get; set; }
-        public string Modell { get; set; }
+        public string Model { get; set; }
         public int NRofWheels { get; set; }
     }
    
