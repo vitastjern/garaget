@@ -26,5 +26,12 @@ namespace garaget_2.Controllers
 
             return View();
         }
+
+        public ActionResult Vehicles()
+        {
+            ViewBag.Message = "Your vehicles, master!";
+
+            return View();
+        }
     }
 }
