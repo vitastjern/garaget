@@ -48,6 +48,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -122,9 +123,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201510201347297_Init.cs" />
-    <Compile Include="Migrations\201510201347297_Init.Designer.cs">
-      <DependentUpon>201510201347297_Init.cs</DependentUpon>
+    <Compile Include="Migrations\201510201425308_Init.cs" />
+    <Compile Include="Migrations\201510201425308_Init.Designer.cs">
+      <DependentUpon>201510201425308_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Vehicle.cs" />
@@ -179,8 +180,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201510201347297_Init.resx">
-      <DependentUpon>201510201347297_Init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201510201425308_Init.resx">
+      <DependentUpon>201510201425308_Init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
