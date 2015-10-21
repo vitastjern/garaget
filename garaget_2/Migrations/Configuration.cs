@@ -16,10 +16,18 @@ namespace garaget_2.Migrations
         protected override void Seed(garaget_2.DataAccessLayer.VehicleContext context)
         {
             context.Vehicles.AddOrUpdate(v => v.RegNR,
-                new Vehicle { RegNR = "ABC123", VehicleType = "Bil", Color = "Blå", 
-                    Brand = "Opel", Model = "Record", NRofWheels = 4 },
-                new Vehicle { RegNR = "QRC123", VehicleType = "Bil", Color = "Gul", 
-                    Brand = "VW", Model = "1303s", NRofWheels = 4 });        
+                new Vehicle { RegNR = "ABC123", VehicleType = "Bil", Color = "Blå",
+                              Brand = "Opel",
+                              Model = "Record",
+                              NRofWheels = 4,
+                              CheckInTime = DateTime.Now.AddDays(-1).AddMinutes(-49).AddSeconds(32)
+                },
+                new Vehicle { RegNR = "PRC123", VehicleType = "Bil", Color = "Gul",
+                              Brand = "VW",
+                              Model = "1303s",
+                              NRofWheels = 4,
+                              CheckInTime = DateTime.Now
+                });        
         }
     
     }

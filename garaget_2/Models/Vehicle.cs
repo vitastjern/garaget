@@ -25,5 +25,8 @@ namespace garaget_2.Models {
 
         [Display(Name="Antal hjul")]
         public int NRofWheels { get; set; }
+
+        [Display(Name = "Tidpunkt för incheckning")]
+        public DateTime CheckInTime { get; set; }
     }
 }
