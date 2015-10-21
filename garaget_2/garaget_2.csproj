@@ -119,13 +119,14 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\VehiclesController.cs" />
     <Compile Include="DataAccessLayer\VehicleContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201510201347297_Init.cs" />
-    <Compile Include="Migrations\201510201347297_Init.Designer.cs">
-      <DependentUpon>201510201347297_Init.cs</DependentUpon>
+    <Compile Include="Migrations\201510201425308_Init.cs" />
+    <Compile Include="Migrations\201510201425308_Init.Designer.cs">
+      <DependentUpon>201510201425308_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Vehicle.cs" />
@@ -167,7 +168,11 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Home\Vehicles.cshtml" />
+    <Content Include="Views\Vehicles\Create.cshtml" />
+    <Content Include="Views\Vehicles\Delete.cshtml" />
+    <Content Include="Views\Vehicles\Details.cshtml" />
+    <Content Include="Views\Vehicles\Edit.cshtml" />
+    <Content Include="Views\Vehicles\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -180,8 +185,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201510201347297_Init.resx">
-      <DependentUpon>201510201347297_Init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201510201425308_Init.resx">
+      <DependentUpon>201510201425308_Init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
