@@ -90,6 +90,29 @@ namespace garaget_2.Controllers
             return View(vehicle);
         }
 
+        public ActionResult CheckOut()
+        {
+
+            var model = db.Vehicles.Where(i => i.RegNR == "nnnnneeeeeeeeeeeeeejjjjj").ToList();
+            return View(model);
+
+            //return View(db.Vehicles.ToList());
+            //return HttpNotFound();
+        }
+
+
+
+
+        [HttpPost]
+        public ActionResult CheckOut(string RegNR)
+        {
+            
+            var model = db.Vehicles.Where(i => i.RegNR == RegNR).ToList();
+            return View(model);
+            
+        }
+
+
         // GET: Vehicles/Delete/5
         public ActionResult Delete(int? id)
         {

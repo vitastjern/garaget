@@ -1,0 +1,15 @@
+﻿@model IEnumerable<garaget_2.Models.Vehicle>
+
+<div id="VehicleList">
+
+
+    @foreach (var item in Model)
+    {
+        <div>
+            <h4>@item.RegNR</h4>
+            <div>@item.Brand, @item.Model</div>
+            <div>Reviews:@Html.ActionLink("Delete", "Delete", new { id = item.Id })</div>
+            <hr />
+        </div>
+    }
+</div>

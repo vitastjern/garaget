@@ -1,0 +1,68 @@
+﻿@model IEnumerable<garaget_2.Models.Vehicle>
+
+
+
+@{
+    ViewBag.Title = "CheckOut";
+}
+
+<h2>Checka ut</h2>
+
+
+
+
+
+<form method="post" action="CheckOut">
+
+    <input type="search" name="RegNR" />
+    <input type="submit" value="Sök efter RegNR" />
+</form>
+
+
+
+
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.VehicleType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegNR)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Brand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Model)
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.VehicleType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RegNR)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Brand)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Model)
+        </td>
+
+        <td>
+            @Html.ActionLink("Checka ut", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
