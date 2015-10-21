@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Garage 2.0</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -16,15 +16,25 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Garage 2.0", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Hem", "Index", "Home")</li>
                     <li>@Html.ActionLink("Om Oss", "About", "Home")</li>
                     <li>@Html.ActionLink("Kontakt", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Fordon", "Index", "Vehicles")</li>
-                </ul>
+                    <li>
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                            Fordon<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Garaget", "Index", "Vehicles")</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Parkera in", "Create", "Vehicles")</li>
+                            <li>@Html.ActionLink("Parkera ut", "Delete", "Vehicles")</li>
+                        </ul>
+
+                 </ul>
             </div>
         </div>
     </div>
