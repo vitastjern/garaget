@@ -1,3 +1,4 @@
+
 namespace garaget_2.Migrations
 {
     using System;
