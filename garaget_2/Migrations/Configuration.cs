@@ -10,7 +10,7 @@ namespace garaget_2.Migrations
     {
                 public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(garaget_2.DataAccessLayer.VehicleContext context)
