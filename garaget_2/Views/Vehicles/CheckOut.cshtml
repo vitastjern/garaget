@@ -22,47 +22,48 @@
 <br />
 
 
-
-
 <table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.VehicleType)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RegNR)
-        </th>
+    @foreach (var item in Model)
+    {
 
-        <th>
-            @Html.DisplayNameFor(model => model.Brand)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Model)
-        </th>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.VehicleType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RegNR)
+            </th>
 
-        <th></th>
-    </tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Brand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Model)
+            </th>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.VehicleType)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RegNR)
-        </td>
+            <th></th>
+        </tr>
 
-        <td>
-            @Html.DisplayFor(modelItem => item.Brand)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Model)
-        </td>
 
-        <td>
-            @Html.ActionLink("Checka ut", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VehicleType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegNR)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model)
+            </td>
+
+            <td>
+                @Html.ActionLink("Checka ut", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
 
 </table>
