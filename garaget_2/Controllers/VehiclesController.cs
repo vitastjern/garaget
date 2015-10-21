@@ -89,7 +89,30 @@ namespace garaget_2.Controllers
             }
             return View(vehicle);
         }
+        
+        public ActionResult Search()
+        {
 
+            var model = db.Vehicles.Where(i => i.RegNR == "nnnnneeeeeeeeeeeeeejjjjj").ToList();
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Search(string RegNR)
+        {
+
+            var model = db.Vehicles.Where(i => i.RegNR == RegNR).ToList();
+            return View(model);
+
+        }
+        //[HttpPost]
+        //public ActionResult SearchColor(string Color)
+        //{
+
+        //    var model = db.Vehicles.Where(i => i.Color == Color).ToList();
+        //    return View(model);
+
+        //}
         public ActionResult CheckOut()
         {
 

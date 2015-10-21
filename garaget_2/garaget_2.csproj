@@ -179,6 +179,7 @@
     <Content Include="Views\Vehicles\Index.cshtml" />
     <Content Include="Views\Vehicles\CheckOut.cshtml" />
     <Content Include="Views\Vehicles\_FoundVehicle.cshtml" />
+    <Content Include="Views\Vehicles\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
