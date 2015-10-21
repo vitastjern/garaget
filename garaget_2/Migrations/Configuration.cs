@@ -18,6 +18,6 @@ namespace garaget_2.Migrations {
                 new Vehicle { RegNR = "QRC123", VehicleType = VehicleTypeList.Bil, Color = "Gul", Brand = "VW", Model = "1303s", NRofWheels = 4 }
                 );
         }
-
+    
     }
 }
