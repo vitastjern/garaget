@@ -128,9 +128,9 @@
     <Compile Include="Migrations\201510201425308_Init.Designer.cs">
       <DependentUpon>201510201425308_Init.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201510211214343_datetime.cs" />
-    <Compile Include="Migrations\201510211214343_datetime.Designer.cs">
-      <DependentUpon>201510211214343_datetime.cs</DependentUpon>
+    <Compile Include="Migrations\201510211149284_enum vehicletypes.cs" />
+    <Compile Include="Migrations\201510211149284_enum vehicletypes.Designer.cs">
+      <DependentUpon>201510211149284_enum vehicletypes.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Vehicle.cs" />
@@ -194,8 +194,8 @@
     <EmbeddedResource Include="Migrations\201510201425308_Init.resx">
       <DependentUpon>201510201425308_Init.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201510211214343_datetime.resx">
-      <DependentUpon>201510211214343_datetime.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201510211149284_enum vehicletypes.resx">
+      <DependentUpon>201510211149284_enum vehicletypes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
