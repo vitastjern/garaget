@@ -90,6 +90,11 @@ namespace garaget_2.Controllers
             return View(vehicle);
         }
 
+        public ActionResult CheckOut()
+        {
+            return View(db.Vehicles.ToList());
+        }
+
         // GET: Vehicles/Delete/5
         public ActionResult Delete(int? id)
         {
