@@ -97,14 +97,14 @@ namespace garaget_2.Controllers
             return View(model);
         }
 
-        [HttpPost]
-        public ActionResult Search(string RegNR)
-        {
+        //[HttpPost]
+        //public ActionResult Search(string RegNR)
+        //{
 
-            var model = db.Vehicles.Where(i => i.RegNR == RegNR).ToList();
-            return View(model);
+        //    var model = db.Vehicles.Where(i => i.RegNR == RegNR).ToList();
+        //    return View(model);
 
-        }
+        //}
         //[HttpPost]
         //public ActionResult SearchColor(string Color)
         //{
@@ -113,6 +113,41 @@ namespace garaget_2.Controllers
         //    return View(model);
 
         //}
+
+        //[HttpPost]
+        //public ActionResult Search(string RegNR)
+        //{
+
+        //    var model = db.Vehicles
+        //        .Where(i => i.RegNR == RegNR).ToList();
+        //    return View(model);
+
+        //}
+
+
+        [HttpPost]
+        public ActionResult Search(string searchTerm = null)
+        {
+            searchTerm = searchTerm.ToLowerInvariant();
+
+            var model = 
+                  db.Vehicles
+                   .OrderBy(r => r.RegNR)
+                  // .OrderByDescending(r => r.RegNR)
+                   .Where(r => searchTerm == null 
+                       || r.RegNR.StartsWith(searchTerm)
+                       || r.Color.StartsWith(searchTerm) 
+                       || r.Brand.StartsWith(searchTerm) 
+                       || r.Model.StartsWith(searchTerm)
+                       || r.VehicleType.ToString().StartsWith(searchTerm)// ToString() = enum 
+                       || r.NRofWheels.ToString().StartsWith(searchTerm)// ToString() = int 
+                       ).ToList();
+            return View(model);
+        }
+
+  
+
+
         public ActionResult CheckOut()
         {
 
