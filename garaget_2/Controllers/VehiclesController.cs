@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using garaget_2.DataAccessLayer;
 using garaget_2.Models;
+using Rotativa.Options;
 
 namespace garaget_2.Controllers
 {
@@ -213,9 +214,30 @@ namespace garaget_2.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Vehicle vehicle = db.Vehicles.Find(id);
+
             db.Vehicles.Remove(vehicle);
             db.SaveChanges();
-            return RedirectToAction("Index");
+
+            TempData["vehicle"] = vehicle;
+
+            return RedirectToAction("Receipt", vehicle);
+        }
+
+        public ActionResult GeneratePDF(Vehicle v)
+        {
+            return new Rotativa.ActionAsPdf("Receipt", v)
+                                    {
+                                        FileName = "Kvitto.pdf",
+                                        PageSize = Size.A4,
+                                        PageOrientation = Orientation.Landscape,
+                                        PageWidth = 210,
+                                        PageHeight = 297                                        
+                                    };
+        }
+        
+        public ActionResult Receipt(Vehicle v)
+        {
+            return View(v);
         }
 
         protected override void Dispose(bool disposing)
