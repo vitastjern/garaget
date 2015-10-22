@@ -90,64 +90,63 @@ namespace garaget_2.Controllers
             }
             return View(vehicle);
         }
-        
+
         public ActionResult Search()
         {
-
-            var model = db.Vehicles.Where(i => i.RegNR == "nnnnneeeeeeeeeeeeeejjjjj").ToList();
+            
+           // var model = db.Vehicles.Where(i => i.RegNR == "nnnnneeeeeeeeeeeeeejjjjj").ToList();
+            var model = db.Vehicles.Where(i => i.RegNR == "ABC123").ToList();
             return View(model);
         }
 
-        //[HttpPost]
-        //public ActionResult Search(string RegNR)
+
+        // [HttpPost]
+        //public ViewResult Search(string sortOrder, string searchTerm = null)
         //{
-
-        //    var model = db.Vehicles.Where(i => i.RegNR == RegNR).ToList();
+        //    ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+        //    ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
+        //    var model = 
+        //            db.Vehicles
+        //            .OrderBy(r => r.RegNR)
+        //       //     .OrderByDescending(r => r.RegNR)
+        //            .Where(r => searchTerm == null 
+        //               || r.RegNR.StartsWith(searchTerm)
+        //               || r.Color.StartsWith(searchTerm) 
+        //               || r.Brand.StartsWith(searchTerm) 
+        //               || r.Model.StartsWith(searchTerm)
+        //               || r.VehicleType.ToString().StartsWith(searchTerm)// ToString() = enum 
+        //               || r.NRofWheels.ToString().StartsWith(searchTerm)// ToString() = int 
+        //               ).ToList();
         //    return View(model);
-
-        //}
-        //[HttpPost]
-        //public ActionResult SearchColor(string Color)
-        //{
-
-        //    var model = db.Vehicles.Where(i => i.Color == Color).ToList();
-        //    return View(model);
-
-        //}
-
-        //[HttpPost]
-        //public ActionResult Search(string RegNR)
-        //{
-
-        //    var model = db.Vehicles
-        //        .Where(i => i.RegNR == RegNR).ToList();
-        //    return View(model);
-
         //}
 
+         [HttpPost]
+         public ViewResult Search(string sortOrder, string searchString)
+         {
+            ViewBag.RegNRSortParm = String.IsNullOrEmpty(sortOrder) ? "RegNR_desc" : "RegNR";
+            ViewBag.searchString = searchString;
+              var vehicles = from s in db.Vehicles
+                            select s;
+             //if (!String.IsNullOrEmpty(searchString))
+             //{
+             //    vehicles = vehicles.Where(s => s.RegNR.Contains(searchString)
+             //                         || s.VehicleType.ToString().Contains(searchString));
 
-        [HttpPost]
-        public ActionResult Search(string searchTerm = null)
-        {
-            searchTerm = searchTerm.ToLowerInvariant();
-
-            var model = 
-                  db.Vehicles
-                   .OrderBy(r => r.RegNR)
-                  // .OrderByDescending(r => r.RegNR)
-                   .Where(r => searchTerm == null 
-                       || r.RegNR.StartsWith(searchTerm)
-                       || r.Color.StartsWith(searchTerm) 
-                       || r.Brand.StartsWith(searchTerm) 
-                       || r.Model.StartsWith(searchTerm)
-                       || r.VehicleType.ToString().StartsWith(searchTerm)// ToString() = enum 
-                       || r.NRofWheels.ToString().StartsWith(searchTerm)// ToString() = int 
-                       ).ToList();
-            return View(model);
-        }
-
-  
-
+              //}
+              //switch (sortOrder)
+              //{
+              //    case "RegNR_desc":
+              //        vehicles = vehicles.OrderByDescending(s => s.RegNR);
+              //        break;
+              //    case "RegNR":
+              //        vehicles = vehicles.OrderBy(s => s.RegNR);
+              //        break;
+              //        default:
+              //        vehicles = vehicles.OrderBy(s => s.RegNR);
+              //        break;
+              //}
+              return View(vehicles.ToList());
+         }
 
         public ActionResult CheckOut()
         {
@@ -165,10 +164,10 @@ namespace garaget_2.Controllers
         [HttpPost]
         public ActionResult CheckOut(string RegNR)
         {
-            
+
             var model = db.Vehicles.Where(i => i.RegNR == RegNR).ToList();
             return View(model);
-            
+
         }
 
 
