@@ -2,33 +2,43 @@
 
 @{
     ViewBag.Title = "Search";
+    ViewBag.RegNRSortParm = "RegNR_desc";
 }
 
 <h2>Sökningar</h2>
 
-<form method="post" action="Search">
+@*<form method="post" action="Search">
 
-    <input type="search" name="searchTerm" />
-    <input type="submit" value="Sök efter info" />
-</form>
-
-@*<form method="post" action="SearchColor">
-
-    <input type="search" name="Color" />
-    <input type="submit" value="Sök efter Färg" />
+    <input type="search" name="searchString" />
+    <input type="submit" value="Multisök" />
 </form>*@
+
+@using (Html.BeginForm())
+{
+    <p>
+        Find by name: 
+        @Html.TextBox("SearchString")
+        <input type="submit" value="Multisök" />
+    </p>
+}
+
 
 <br />
 
+@ViewBag.searchString
 
 <table class="table">
+
+
 
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.VehicleType)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.RegNR)
+                @Html.ActionLink("Reg.identitet", "Search", new { sortOrder = ViewBag.RegNRSortParm, searchString = ViewBag.searchString })
+                @*@Html.ActionLink("Reg.identitet", "Search", new { searchString = ViewBag.searchString })*@
+                @*@Html.DisplayNameFor(model => model.RegNR)*@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Color)
@@ -72,7 +82,7 @@
                     @Html.DisplayFor(modelItem => item.CheckInTime)
                 </td>
                 <td>
-                    @Html.ActionLink("Detaljer", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Detaljer", "Details", new { id = item.Id }) 
                 </td>
             </tr>
 }
