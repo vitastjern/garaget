@@ -3,20 +3,20 @@
 @{
     ViewBag.Title = "Search";
     ViewBag.RegNRSortParm = "RegNR_desc";
+    ViewBag.ColorSortParm = "RegNR_desc";
+    ViewBag.BrandSortParm = "RegNR_desc";
+    ViewBag.ModelSortParm = "RegNR_desc";
+    ViewBag.NRofWheelsSortParm = "RegNR_desc";
+    ViewBag.CheckInTimeSortParm = "RegNR_desc";
 }
 
 <h2>Sökningar</h2>
 
-@*<form method="post" action="Search">
-
-    <input type="search" name="searchString" />
-    <input type="submit" value="Multisök" />
-</form>*@
 
 @using (Html.BeginForm())
 {
     <p>
-        Find by name: 
+        
         @Html.TextBox("SearchString")
         <input type="submit" value="Multisök" />
     </p>
@@ -25,7 +25,7 @@
 
 <br />
 
-@ViewBag.searchString
+
 
 <table class="table">
 
@@ -36,24 +36,27 @@
                 @Html.DisplayNameFor(model => model.VehicleType)
             </th>
             <th>
-                @Html.ActionLink("Reg.identitet", "Search", new { sortOrder = ViewBag.RegNRSortParm, searchString = ViewBag.searchString })
-                @*@Html.ActionLink("Reg.identitet", "Search", new { searchString = ViewBag.searchString })*@
-                @*@Html.DisplayNameFor(model => model.RegNR)*@
+                @Html.ActionLink(@Html.DisplayNameFor(model => model.RegNR).ToHtmlString(), "Search", new { sortOrder = ViewBag.RegNRSortParm, searchString = ViewBag.searchString })
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Color)
+                @Html.ActionLink(@Html.DisplayNameFor(model => model.Color).ToHtmlString(), "Search", new { sortOrder = ViewBag.ColorSortParm, searchString = ViewBag.searchString })
+                @*@Html.DisplayNameFor(model => model.Color)*@
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Brand)
+                @Html.ActionLink(@Html.DisplayNameFor(model => model.Brand).ToHtmlString(), "Search", new { sortOrder = ViewBag.BrandSortParm, searchString = ViewBag.searchString })
+                @*@Html.DisplayNameFor(model => model.Brand)*@
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Model)
+                @Html.ActionLink(@Html.DisplayNameFor(model => model.Model).ToHtmlString(), "Search", new { sortOrder = ViewBag.ModelSortParm, searchString = ViewBag.searchString })
+                @*@Html.DisplayNameFor(model => model.Model)*@
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.NRofWheels)
+                @Html.ActionLink(@Html.DisplayNameFor(model => model.NRofWheels).ToHtmlString(), "Search", new { sortOrder = ViewBag.NRofWheelsSortParm, searchString = ViewBag.searchString })
+                @*@Html.DisplayNameFor(model => model.NRofWheels)*@
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CheckInTime)
+                @Html.ActionLink(@Html.DisplayNameFor(model => model.Brand).ToHtmlString(), "Search", new { sortOrder = ViewBag.BrandSortParm, searchString = ViewBag.searchString })
+                @*@Html.DisplayNameFor(model => model.CheckInTime)*@
             </th>
             <th></th>
         </tr>
