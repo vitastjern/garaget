@@ -16,21 +16,25 @@ namespace garaget_2.Models {
 
         [Display(Name = "Reg.identitet")]
         [Required(ErrorMessage = "Fråga efter legitimation, istället?")]
+        [RegularExpression("^[a-zA-ZöäåÖÄÅ&%§.,;:0-9]*$", ErrorMessage = "Programmeringstecken etc. är ej tillåtna!")]
         [MinLength(4, ErrorMessage = ("Enlig Wiki kan man inte identifiera det ni skrev!"))]
         [MaxLength(32, ErrorMessage = "Det här är inte rätt ställe att skriva noveller!")]
         public string RegNR { get; set; }
 
         [Display(Name = "Färg")]
+        [RegularExpression("^[a-zA-ZöäåÖÄÅ&%§.,;:0-9]*$",ErrorMessage="Programmeringstecken etc. är ej tillåtna!")]
         [MinLength(3, ErrorMessage = "Vit, röd, blå, gul, blå & grå är korta färgnamn")]
         [MaxLength(32, ErrorMessage = "Det här är inte rätt ställe att skriva noveller!")]
         public string Color { get; set; }
 
         [Display(Name = "Märke")]
+        [RegularExpression("^[a-zA-ZöäåÖÄÅ&%§.,;:0-9]*$", ErrorMessage = "Programmeringstecken etc. är ej tillåtna!")]
         [MinLength(2, ErrorMessage = "Om ni anger något, skriv vettigt!")]
         [MaxLength(32, ErrorMessage = "Det här är inte rätt ställe att skriva noveller!")]
         public string Brand { get; set; }
 
         [Display(Name = "Modell")]
+        [RegularExpression("^[a-zA-ZöäåÖÄÅ&%§.,;:0-9]*$", ErrorMessage = "Programmeringstecken etc. är ej tillåtna!")]
         [MinLength(2, ErrorMessage = "I denna värld finns inte så korta modellnamn")]
         [MaxLength(32, ErrorMessage = "Det här är inte rätt ställe att skriva noveller!")]
         public string Model { get; set; }
