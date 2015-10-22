@@ -5,20 +5,19 @@
     ViewBag.RegNRSortParm = "RegNR_desc";
 }
 
-<h2>Sökningar</h2>
+<h2>Ange söksträng</h2>
 
 @*<form method="post" action="Search">
 
     <input type="search" name="searchString" />
-    <input type="submit" value="Multisök" />
+    <input type="submit" value="Sök" />
 </form>*@
 
 @using (Html.BeginForm())
 {
     <p>
-        Find by name: 
         @Html.TextBox("SearchString")
-        <input type="submit" value="Multisök" />
+        <input type="submit" value="Sök" />
     </p>
 }
 
