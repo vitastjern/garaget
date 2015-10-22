@@ -132,6 +132,18 @@
     <Compile Include="Migrations\201510211149284_enum vehicletypes.Designer.cs">
       <DependentUpon>201510211149284_enum vehicletypes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510220842206_enumchanges.cs" />
+    <Compile Include="Migrations\201510220842206_enumchanges.Designer.cs">
+      <DependentUpon>201510220842206_enumchanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510220900233_again.....cs" />
+    <Compile Include="Migrations\201510220900233_again.....Designer.cs">
+      <DependentUpon>201510220900233_again.....cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510220905438_changesinEnum.cs" />
+    <Compile Include="Migrations\201510220905438_changesinEnum.Designer.cs">
+      <DependentUpon>201510220905438_changesinEnum.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Vehicle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -196,6 +208,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201510211149284_enum vehicletypes.resx">
       <DependentUpon>201510211149284_enum vehicletypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510220842206_enumchanges.resx">
+      <DependentUpon>201510220842206_enumchanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510220900233_again.....resx">
+      <DependentUpon>201510220900233_again.....cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510220905438_changesinEnum.resx">
+      <DependentUpon>201510220905438_changesinEnum.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
