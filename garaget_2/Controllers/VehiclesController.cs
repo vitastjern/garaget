@@ -92,13 +92,13 @@ namespace garaget_2.Controllers
             return View(vehicle);
         }
 
-        public ActionResult Search()
-        {
-            
-           // var model = db.Vehicles.Where(i => i.RegNR == "nnnnneeeeeeeeeeeeeejjjjj").ToList();
-            var model = db.Vehicles.Where(i => i.RegNR == "ABC123").ToList();
-            return View(model);
-        }
+        //public ActionResult Search()
+        //{
+
+        //   // var model = db.Vehicles.Where(i => i.RegNR == "nnnnneeeeeeeeeeeeeejjjjj").ToList();
+        //    var model = db.Vehicles.Where(i => i.RegNR == "ABC123").ToList();
+        //    return View(model);
+        //}
 
 
         // [HttpPost]
@@ -121,33 +121,54 @@ namespace garaget_2.Controllers
         //    return View(model);
         //}
 
-         [HttpPost]
-         public ViewResult Search(string sortOrder, string searchString)
-         {
+        // [HttpPost]
+        public ViewResult Search(string sortOrder, string searchString)
+        {
             ViewBag.RegNRSortParm = String.IsNullOrEmpty(sortOrder) ? "RegNR_desc" : "RegNR";
-            ViewBag.searchString = searchString;
-              var vehicles = from s in db.Vehicles
-                            select s;
-             //if (!String.IsNullOrEmpty(searchString))
-             //{
-             //    vehicles = vehicles.Where(s => s.RegNR.Contains(searchString)
-             //                         || s.VehicleType.ToString().Contains(searchString));
+            ViewBag.ColorSortParm = sortOrder == "Color" ? "Color_desc" : "Color";
+            ViewBag.BrandSortParm = sortOrder == "Brand" ? "Brand_desc" : "Brand";
+            ViewBag.ModelSortParm = sortOrder == "Model" ? "Model_desc" : "Model";
+            ViewBag.NRofWheelsSortParm = sortOrder == "NRofWheels" ? "NRofWheels_desc" : "NRofWheels";
+            ViewBag.CheckInTimeSortParm = sortOrder == "CheckInTime" ? "Color_desc" : "CheckInTime";
 
-              //}
-              //switch (sortOrder)
-              //{
-              //    case "RegNR_desc":
-              //        vehicles = vehicles.OrderByDescending(s => s.RegNR);
-              //        break;
-              //    case "RegNR":
-              //        vehicles = vehicles.OrderBy(s => s.RegNR);
-              //        break;
-              //        default:
-              //        vehicles = vehicles.OrderBy(s => s.RegNR);
-              //        break;
-              //}
-              return View(vehicles.ToList());
-         }
+
+            ViewBag.searchString = searchString;
+            var vehicles = from s in db.Vehicles select s;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                vehicles = vehicles.Where(s => s.RegNR.Contains(searchString)
+                     || s.VehicleType.ToString().Contains(searchString)// ToString() = enum 
+                     || s.Color.Contains(searchString)
+                     || s.Brand.Contains(searchString)
+                     || s.Model.Contains(searchString)
+                     || s.NRofWheels.ToString().Contains(searchString));// ToString() = int 
+
+            }
+            else
+            {
+                vehicles = vehicles.Where(s => s.RegNR == "nnnnneeeeeeeeeeeeeejjjjj");
+            }
+            switch (sortOrder)
+            {
+                case "RegNR_desc":
+                    vehicles = vehicles.OrderByDescending(s => s.RegNR);
+                    break;
+                case "RegNR":
+                    vehicles = vehicles.OrderBy(s => s.RegNR);
+                    break;
+                case "Color_desc":
+                    vehicles = vehicles.OrderByDescending(s => s.RegNR);
+                    break;
+                case "Color":
+                    vehicles = vehicles.OrderBy(s => s.RegNR);
+                    break;
+                default:
+                    vehicles = vehicles.OrderBy(s => s.RegNR);
+                    break;
+            }
+            return View(vehicles.ToList());
+        }
 
         public ActionResult CheckOut()
         {
