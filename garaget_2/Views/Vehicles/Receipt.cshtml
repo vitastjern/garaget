@@ -8,66 +8,51 @@
 
 <div>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
+    <div class="row">
+        <div class="col-md-6 rubrik">
             @Html.DisplayNameFor(model => model.VehicleType)
-        </dt>
-
-        <dd>
+        </div>
+        <div class="col-md-6">
             @Html.DisplayFor(model => model.VehicleType)
-        </dd>
-
-        <dt>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 rubrik">
             @Html.DisplayNameFor(model => model.RegNR)
-        </dt>
-
-        <dd>
+        </div>
+        <div class="col-md-6">
             @Html.DisplayFor(model => model.RegNR)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Color)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Color)
-        </dd>
-
-        <dt>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 rubrik">
             @Html.DisplayNameFor(model => model.Brand)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Brand)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Model)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Model)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.NRofWheels)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NRofWheels)
-        </dd>
-
-        <dt>
+        </div>
+        <div class="col-md-6">
+            @Html.DisplayFor(model => model.Brand) @Html.DisplayFor(model => model.Model)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 rubrik">
             @Html.DisplayNameFor(model => model.CheckInTime)
-        </dt>
-
-        <dd>
+        </div>
+        <div class="col-md-6">
             @Html.DisplayFor(model => model.CheckInTime)
-        </dd>
-
-    </dl>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 rubrik">
+            Total parkeringstid
+        </div>
+        <div class="col-md-6">
+            @DateTime.Now.Subtract(Model.CheckInTime).Hours tim @DateTime.Now.Subtract(Model.CheckInTime).Minutes min
+        </div>
+    </div>
 </div>
+
+<br />
 <p>
     @Html.ActionLink("Skriv ut kvitto", "GeneratePDF", Model) |
     @Html.ActionLink("Tillbaka till garaget", "Index")
 </p>
+
