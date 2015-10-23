@@ -149,7 +149,8 @@ namespace garaget_2.Controllers
             }
             else
             {
-                vehicles = vehicles.Where(s => s.RegNR == "nnnnneeeeeeeeeeeeeejjjjj");
+               // vehicles = vehicles.Where(s => s.RegNR == "nnnnneeeeeeeeeeeeeejjjjj");
+  
             }
             switch (sortOrder)
             {
