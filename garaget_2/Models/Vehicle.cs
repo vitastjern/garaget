@@ -40,7 +40,7 @@ namespace garaget_2.Models {
         public string Model { get; set; }
 
         [Display(Name = "Antal hjul")]
-        [Range(1, 22, ErrorMessage = "Stridsvagnar & snöfordon skadar golvet, hjul krävs!")]
+        [Range(1, 999, ErrorMessage = "Stridsvagnar/snöfordon med band skadar golvet. Hjul krävs!")]
         public int NRofWheels { get; set; }
 
         [Display(Name = "Tidpunkt för incheckning")]
