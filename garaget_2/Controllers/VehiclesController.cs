@@ -55,7 +55,7 @@ namespace garaget_2.Controllers
                 vehicle.CheckInTime = DateTime.Now;
                 db.Vehicles.Add(vehicle);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Search");
             }
 
             return View(vehicle);
@@ -92,35 +92,7 @@ namespace garaget_2.Controllers
             return View(vehicle);
         }
 
-        //public ActionResult Search()
-        //{
-
-        //   // var model = db.Vehicles.Where(i => i.RegNR == "nnnnneeeeeeeeeeeeeejjjjj").ToList();
-        //    var model = db.Vehicles.Where(i => i.RegNR == "ABC123").ToList();
-        //    return View(model);
-        //}
-
-
-        // [HttpPost]
-        //public ViewResult Search(string sortOrder, string searchTerm = null)
-        //{
-        //    ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
-        //    ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
-        //    var model = 
-        //            db.Vehicles
-        //            .OrderBy(r => r.RegNR)
-        //       //     .OrderByDescending(r => r.RegNR)
-        //            .Where(r => searchTerm == null 
-        //               || r.RegNR.StartsWith(searchTerm)
-        //               || r.Color.StartsWith(searchTerm) 
-        //               || r.Brand.StartsWith(searchTerm) 
-        //               || r.Model.StartsWith(searchTerm)
-        //               || r.VehicleType.ToString().StartsWith(searchTerm)// ToString() = enum 
-        //               || r.NRofWheels.ToString().StartsWith(searchTerm)// ToString() = int 
-        //               ).ToList();
-        //    return View(model);
-        //}
-
+        
         // [HttpPost]
         public ViewResult Search(string sortOrder, string searchString)
         {
@@ -147,11 +119,11 @@ namespace garaget_2.Controllers
                      || s.NRofWheels.ToString().Contains(searchString));// ToString() = int 
 
             }
-            else
-            {
-               // vehicles = vehicles.Where(s => s.RegNR == "nnnnneeeeeeeeeeeeeejjjjj");
+            //else
+            //{
+            //   vehicles = vehicles.Where(s => s.RegNR == "nnnnneeeeeeeeeeeeeejjjjj");
   
-            }
+            //}
             switch (sortOrder)
             {
                 case "VehicleType_desc":
@@ -209,9 +181,6 @@ namespace garaget_2.Controllers
 
             var model = db.Vehicles.Where(i => i.RegNR == "nnnnneeeeeeeeeeeeeejjjjj").ToList();
             return View(model);
-
-            //return View(db.Vehicles.ToList());
-            //return HttpNotFound();
         }
 
 
