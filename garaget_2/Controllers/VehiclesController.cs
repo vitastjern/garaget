@@ -87,7 +87,7 @@ namespace garaget_2.Controllers
             {
                 db.Entry(vehicle).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Search");
             }
             return View(vehicle);
         }
