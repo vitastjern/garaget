@@ -2,12 +2,12 @@
 
 @{
     ViewBag.Title = "Search";
-    ViewBag.RegNRSortParm = "RegNR_desc";
-    ViewBag.ColorSortParm = "RegNR_desc";
-    ViewBag.BrandSortParm = "RegNR_desc";
-    ViewBag.ModelSortParm = "RegNR_desc";
-    ViewBag.NRofWheelsSortParm = "RegNR_desc";
-    ViewBag.CheckInTimeSortParm = "RegNR_desc";
+    //ViewBag.RegNRSortParm = "RegNR_desc";
+    //ViewBag.ColorSortParm = "RegNR_desc";
+    //ViewBag.BrandSortParm = "RegNR_desc";
+    //ViewBag.ModelSortParm = "RegNR_desc";
+    //ViewBag.NRofWheelsSortParm = "RegNR_desc";
+    //ViewBag.CheckInTimeSortParm = "RegNR_desc";
 }
 
 <h2>Ange söksträng</h2>
@@ -26,14 +26,16 @@
 <br />
 
 
-
 <table class="table">
 
 
 
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.VehicleType)
+                @Html.ActionLink(@Html.DisplayNameFor(model => model.VehicleType).ToHtmlString(), "Search", new { sortOrder = ViewBag.VehicleTypeSortParm, searchString = ViewBag.searchString })
+
+
+                @*@Html.DisplayNameFor(model => model.VehicleType)*@
             </th>
             <th>
                 @Html.ActionLink(@Html.DisplayNameFor(model => model.RegNR).ToHtmlString(), "Search", new { sortOrder = ViewBag.RegNRSortParm, searchString = ViewBag.searchString })
@@ -55,7 +57,7 @@
                 @*@Html.DisplayNameFor(model => model.NRofWheels)*@
             </th>
             <th>
-                @Html.ActionLink(@Html.DisplayNameFor(model => model.Brand).ToHtmlString(), "Search", new { sortOrder = ViewBag.BrandSortParm, searchString = ViewBag.searchString })
+                @Html.ActionLink(@Html.DisplayNameFor(model => model.CheckInTime).ToHtmlString(), "Search", new { sortOrder = ViewBag.CheckInTimeSortParm, searchString = ViewBag.searchString })
                 @*@Html.DisplayNameFor(model => model.CheckInTime)*@
             </th>
             <th></th>
