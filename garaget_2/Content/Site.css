@@ -26,3 +26,12 @@ textarea {
 .rubrik {
     font-weight: bold;
 }
+
+.fill-screen {
+    background-size:cover;
+    background-position:center;
+}
+
+.fixed-attachment {
+    background-attachment: fixed;
+}
