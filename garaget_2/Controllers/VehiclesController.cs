@@ -232,7 +232,7 @@ namespace garaget_2.Controllers
                                     {
                                         FileName = "Kvitto.pdf",
                                         CustomSwitches = "--disable-smart-shrinking",
-                                        PageSize = Size.A4,
+                                        PageSize = Size.A6,
                                         PageWidth = 210,
                                         PageHeight = 297
                                         
