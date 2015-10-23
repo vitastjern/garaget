@@ -12,11 +12,9 @@
 
 <h2>Ange söksträng</h2>
 
-
 @using (Html.BeginForm())
 {
     <p>
-        
         @Html.TextBox("SearchString")
         <input type="submit" value="Sök" />
     </p>
@@ -27,9 +25,6 @@
 
 
 <table class="table">
-
-
-
         <tr>
             <th>
                 @Html.ActionLink(HttpUtility.HtmlDecode(Html.DisplayNameFor(model => model.VehicleType).ToString()), "Search", new { sortOrder = ViewBag.VehicleTypeSortParm, searchString = ViewBag.searchString })
@@ -45,7 +40,7 @@
             </th>
             <th>
                 @Html.ActionLink(HttpUtility.HtmlDecode(Html.DisplayNameFor(model => model.Model).ToString()), "Search", new { sortOrder = ViewBag.ModelSortParm, searchString = ViewBag.searchString })
-               </th>
+            </th>
             <th>
                 @Html.ActionLink(HttpUtility.HtmlDecode(Html.DisplayNameFor(model => model.NRofWheels).ToString()), "Search", new { sortOrder = ViewBag.NRofWheelsSortParm, searchString = ViewBag.searchString })
             </th>

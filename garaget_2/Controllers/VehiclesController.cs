@@ -262,10 +262,11 @@ namespace garaget_2.Controllers
             return new Rotativa.ActionAsPdf("Receipt", v)
                                     {
                                         FileName = "Kvitto.pdf",
+                                        CustomSwitches = "--disable-smart-shrinking",
                                         PageSize = Size.A4,
-                                        PageOrientation = Orientation.Landscape,
                                         PageWidth = 210,
-                                        PageHeight = 297                                        
+                                        PageHeight = 297
+                                        
                                     };
         }
         
