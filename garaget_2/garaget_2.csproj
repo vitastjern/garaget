@@ -129,10 +129,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201510291231221_NYDATABASE.cs" />
-    <Compile Include="Migrations\201510291231221_NYDATABASE.Designer.cs">
-      <DependentUpon>201510291231221_NYDATABASE.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Member.cs" />
     <Compile Include="Models\Vehicle.cs" />
@@ -198,6 +194,8 @@
     <Content Include="Views\Vehicles2\Details.cshtml" />
     <Content Include="Views\Vehicles2\Edit.cshtml" />
     <Content Include="Views\Vehicles2\Index.cshtml" />
+    <Content Include="Views\Vehicles\MemberOwnedVehicles.cshtml" />
+    <Content Include="Views\Vehicles2\MemberOwnedVehicles.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -208,14 +206,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201510291109165_StartupGarageTvaFem.resx">
-      <DependentUpon>201510291109165_StartupGarageTvaFem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201510291114300_primaryKey_in_VehicleType.resx">
-      <DependentUpon>201510291114300_primaryKey_in_VehicleType.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

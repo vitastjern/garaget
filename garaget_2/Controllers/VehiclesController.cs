@@ -38,8 +38,9 @@ namespace garaget_2.Controllers
         }
 
         // GET: Vehicles/Create
-        public ActionResult Create()
+        public ActionResult Create(int id)
         {
+            ViewBag.Member = db.Members.Where(m => m.MemberId == id);
             return View();
         }
 
@@ -48,7 +49,7 @@ namespace garaget_2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,VehicleType,RegNR,Color,Brand,Model,NRofWheels")] Vehicle vehicle)
+        public ActionResult Create([Bind(Include = "VehicleId,VehicleType,RegNr,Color,Brand,Model,NrOfWheels")] Vehicle vehicle)
         {
             if (ModelState.IsValid)
             {
@@ -81,7 +82,7 @@ namespace garaget_2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,VehicleType,RegNR,Color,Brand,Model,NRofWheels,CheckInTime")] Vehicle vehicle)
+        public ActionResult Edit([Bind(Include = "VehicleId,VehicleType,RegNr,Color,Brand,Model,NrOfWheels,CheckInTime")] Vehicle vehicle)
         {
             if (ModelState.IsValid)
             {
@@ -115,7 +116,8 @@ namespace garaget_2.Controllers
                      || s.VehicleType.VehicleTypeName.Contains(searchString)
                      || s.Color.Contains(searchString)
                      || s.Brand.Contains(searchString)
-                    // || s.Member.FullName.Contains(searchString)
+                     || s.Member.FirstName.Contains(searchString)
+                     || s.Member.LastName.Contains(searchString)
                      || s.Model.Contains(searchString));
       
 
@@ -192,6 +194,13 @@ namespace garaget_2.Controllers
 
         }
 
+        // GET: Vehicles/MemberOwnedVehicles
+        public ActionResult MemberOwnedVehicles(int id)
+        {
+            ViewBag.Member = db.Members.Where(m => m.MemberId == id); 
+            var model = db.Vehicles.Where(v => v.MemberId == id).ToList();
+            return View(model);
+        }
 
         // GET: Vehicles/Delete/5
         public ActionResult Delete(int? id)
