@@ -129,10 +129,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201510291217091_Initial.cs" />
-    <Compile Include="Migrations\201510291217091_Initial.Designer.cs">
-      <DependentUpon>201510291217091_Initial.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Member.cs" />
     <Compile Include="Models\Vehicle.cs" />
@@ -210,11 +206,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201510291217091_Initial.resx">
-      <DependentUpon>201510291217091_Initial.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

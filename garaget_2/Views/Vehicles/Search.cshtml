@@ -2,12 +2,6 @@
 
 @{
     ViewBag.Title = "Search";
-    //ViewBag.RegNRSortParm = "RegNR_desc";
-    //ViewBag.ColorSortParm = "RegNR_desc";
-    //ViewBag.BrandSortParm = "RegNR_desc";
-    //ViewBag.ModelSortParm = "RegNR_desc";
-    //ViewBag.NRofWheelsSortParm = "RegNR_desc";
-    //ViewBag.CheckInTimeSortParm = "RegNR_desc";
 }
 
 <h2>Ange söksträng</h2>
@@ -27,10 +21,10 @@
 <table class="table">
         <tr>
             <th>
-                @Html.ActionLink(HttpUtility.HtmlDecode(Html.DisplayNameFor(model => model.VehicleType).ToString()), "Search", new { sortOrder = ViewBag.VehicleTypeSortParm, searchString = ViewBag.searchString })
+                @Html.ActionLink(HttpUtility.HtmlDecode(Html.DisplayNameFor(model => model.VehicleTypeId).ToString()), "Search", new { sortOrder = ViewBag.VehicleTypeSortParm, searchString = ViewBag.searchString })
             </th>
             <th>
-                @Html.ActionLink(HttpUtility.HtmlDecode(Html.DisplayNameFor(model => model.RegNR).ToString()), "Search", new { sortOrder = ViewBag.RegNRSortParm, searchString = ViewBag.searchString })
+                @Html.ActionLink(HttpUtility.HtmlDecode(Html.DisplayNameFor(model => model.RegNr).ToString()), "Search", new { sortOrder = ViewBag.RegNRSortParm, searchString = ViewBag.searchString })
             </th>
             <th>
                 @Html.ActionLink(HttpUtility.HtmlDecode(Html.DisplayNameFor(model => model.Color).ToString()), "Search", new { sortOrder = ViewBag.ColorSortParm, searchString = ViewBag.searchString })
@@ -42,8 +36,10 @@
                 @Html.ActionLink(HttpUtility.HtmlDecode(Html.DisplayNameFor(model => model.Model).ToString()), "Search", new { sortOrder = ViewBag.ModelSortParm, searchString = ViewBag.searchString })
             </th>
             <th>
-                @Html.ActionLink(HttpUtility.HtmlDecode(Html.DisplayNameFor(model => model.NRofWheels).ToString()), "Search", new { sortOrder = ViewBag.NRofWheelsSortParm, searchString = ViewBag.searchString })
-            </th>
+               @Html.ActionLink(HttpUtility.HtmlDecode(Html.DisplayNameFor(model => model.MemberId).ToString()), "Search", new { sortOrder = ViewBag.MemberSortParm, searchString = ViewBag.searchString })
+
+
+             </th>
             <th>
                 @Html.ActionLink(HttpUtility.HtmlDecode(Html.DisplayNameFor(model => model.CheckInTime).ToString()), "Search", new { sortOrder = ViewBag.CheckInTimeSortParm, searchString = ViewBag.searchString })
             </th>
@@ -54,10 +50,10 @@
         @foreach (var item in Model) {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.VehicleType)
+                    @Html.DisplayFor(modelItem => item.VehicleType.VehicleTypeName)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.RegNR)
+                    @Html.DisplayFor(modelItem => item.RegNr)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Color)
@@ -69,16 +65,16 @@
                     @Html.DisplayFor(modelItem => item.Model)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.NRofWheels)
+                    @Html.DisplayFor(modelItem => item.Member.FullName)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.CheckInTime)
                 </td>
                 <td>
-                    @Html.ActionLink("Detaljer", "Details", new { id = item.Id }) 
+                    @Html.ActionLink("Detaljer", "Details", new { id = item.VehicleId }) 
                 </td>
                 <td>
-                    @Html.ActionLink("Checka ut", "Delete", new { id = item.Id })
+                    @Html.ActionLink("Checka ut", "Delete", new { id = item.VehicleId })
                 </td>
             </tr>
 }
