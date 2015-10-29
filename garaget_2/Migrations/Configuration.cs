@@ -34,6 +34,7 @@ namespace garaget_2.Migrations {
             context.Vehicles.AddOrUpdate(v => v.RegNr,
                 new Vehicle
                 {
+                    VehicleId = 1,
                     RegNr = "Vinsten",
                     Color = "Silvermetallic",
                     Brand = "Fård",
@@ -45,6 +46,7 @@ namespace garaget_2.Migrations {
                 },
                 new Vehicle
                 {
+                    VehicleId = 2,
                     RegNr = "Annas",
                     Color = "Blå",
                     Brand = "Opel",
@@ -56,6 +58,7 @@ namespace garaget_2.Migrations {
                 },
                 new Vehicle
                 {
+                    VehicleId = 3,
                     RegNr = "ABC123",
                     Color = "Blå",
                     Brand = "Opel",

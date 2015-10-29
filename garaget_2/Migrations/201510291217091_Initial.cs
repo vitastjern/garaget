@@ -3,7 +3,7 @@ namespace garaget_2.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class NYDATABASE : DbMigration
+    public partial class Initial : DbMigration
     {
         public override void Up()
         {

@@ -210,8 +210,11 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201510291231221_NYDATABASE.resx">
-      <DependentUpon>201510291231221_NYDATABASE.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201510291109165_StartupGarageTvaFem.resx">
+      <DependentUpon>201510291109165_StartupGarageTvaFem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510291114300_primaryKey_in_VehicleType.resx">
+      <DependentUpon>201510291114300_primaryKey_in_VehicleType.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
