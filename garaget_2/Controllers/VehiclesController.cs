@@ -38,8 +38,9 @@ namespace garaget_2.Controllers
         }
 
         // GET: Vehicles/Create
-        public ActionResult Create()
+        public ActionResult Create(int id)
         {
+            ViewBag.Member = db.Members.Where(m => m.MemberId == id);
             return View();
         }
 
@@ -194,6 +195,13 @@ namespace garaget_2.Controllers
 
         }
 
+        // GET: Vehicles/MemberOwnedVehicles
+        public ActionResult MemberOwnedVehicles(int id)
+        {
+            ViewBag.Member = db.Members.Where(m => m.MemberId == id); 
+            var model = db.Vehicles.Where(v => v.MemberId == id).ToList();
+            return View(model);
+        }
 
         // GET: Vehicles/Delete/5
         public ActionResult Delete(int? id)

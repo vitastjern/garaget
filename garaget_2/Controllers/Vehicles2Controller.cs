@@ -99,6 +99,14 @@ namespace garaget_2.Controllers
             return View(vehicle);
         }
 
+        // GET: Vehicles/MemberOwnedVehicles
+        public ActionResult MemberOwnedVehicles(int id)
+        {
+            //ViewBag.Member = db.Members.Where(m => m.MemberId == id);
+            var model = db.Vehicles.Where(v => v.MemberId == id).ToList();
+            return View(model);
+        }
+
         // GET: Vehicles2/Delete/5
         public ActionResult Delete(int? id)
         {

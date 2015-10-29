@@ -4,52 +4,48 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Medlemslista</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Lägg till en ny medlem", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </th>
+            @Html.DisplayNameFor(model => model.FullName)
+        </th>  
         <th>
-            @Html.DisplayNameFor(model => model.LastName)
+            @Html.DisplayNameFor(model => model.Address)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Street)
-        </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.PostalCode)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.City)
-        </th>
+        </th>*@
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.FirstName)
+            @Html.DisplayFor(modelItem => item.FullName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.LastName)
+            @Html.DisplayFor(modelItem => item.Address)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Street)
-        </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.PostalCode)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.City)
-        </td>
+        </td>*@
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MemberId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MemberId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MemberId })
+            @Html.ActionLink("Ändra", "Edit", new { id=item.MemberId }) |
+            @Html.ActionLink("Detaljer", "Details", new { id=item.MemberId }) |
+            @Html.ActionLink("Ta bort medlem", "Delete", new { id=item.MemberId }) |
+            @Html.ActionLink("Checka in fordon", "Create", "Vehicles", new { id = item.MemberId }, null) |
+            @Html.ActionLink("Checka ut fordon", "MemberOwnedVehicles", "Vehicles", new { id = item.MemberId }, null)
         </td>
     </tr>
 }
