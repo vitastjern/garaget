@@ -14,7 +14,7 @@ namespace garaget_2.Models {
         [Display(Name = "Fordonstyp")]
         public VehicleTypeList VehicleType { get; set; }
 
-        [Display(Name = "Reg.identitet")]
+        [Display(Name = "Reg.identitet")] 
         [Required(ErrorMessage = "Fråga efter legitimation, istället?")]
         [RegularExpression("^[a-zA-ZöäåÖÄÅ &%§.,-;:0-9]*$", ErrorMessage = "Programmeringstecken etc. är ej tillåtna!")]
         [MinLength(4, ErrorMessage = ("Enlig Wiki kan man inte identifiera det ni skrev!"))]
