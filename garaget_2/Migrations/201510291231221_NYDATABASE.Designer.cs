@@ -7,13 +7,13 @@ namespace garaget_2.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class primaryKey_in_VehicleType : IMigrationMetadata
+    public sealed partial class NYDATABASE : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(primaryKey_in_VehicleType));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(NYDATABASE));
         
         string IMigrationMetadata.Id
         {
-            get { return "201510291114300_primaryKey_in_VehicleType"; }
+            get { return "201510291231221_NYDATABASE"; }
         }
         
         string IMigrationMetadata.Source

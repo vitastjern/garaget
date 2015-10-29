@@ -129,13 +129,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201510291109165_StartupGarageTvaFem.cs" />
-    <Compile Include="Migrations\201510291109165_StartupGarageTvaFem.Designer.cs">
-      <DependentUpon>201510291109165_StartupGarageTvaFem.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201510291114300_primaryKey_in_VehicleType.cs" />
-    <Compile Include="Migrations\201510291114300_primaryKey_in_VehicleType.Designer.cs">
-      <DependentUpon>201510291114300_primaryKey_in_VehicleType.cs</DependentUpon>
+    <Compile Include="Migrations\201510291231221_NYDATABASE.cs" />
+    <Compile Include="Migrations\201510291231221_NYDATABASE.Designer.cs">
+      <DependentUpon>201510291231221_NYDATABASE.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Member.cs" />
@@ -214,11 +210,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201510291109165_StartupGarageTvaFem.resx">
-      <DependentUpon>201510291109165_StartupGarageTvaFem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201510291114300_primaryKey_in_VehicleType.resx">
-      <DependentUpon>201510291114300_primaryKey_in_VehicleType.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201510291231221_NYDATABASE.resx">
+      <DependentUpon>201510291231221_NYDATABASE.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

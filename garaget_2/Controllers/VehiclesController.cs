@@ -96,13 +96,13 @@ namespace garaget_2.Controllers
         // [HttpPost]
         public ViewResult Search(string sortOrder, string searchString)
         {
-            //ViewBag.RegNRSortParm = String.IsNullOrEmpty(sortOrder) ? "RegNR" : "RegNR_desc";
+
             ViewBag.VehicleTypeSortParm = sortOrder == "VehicleType" ? "VehicleType_desc" : "VehicleType";
             ViewBag.RegNRSortParm = sortOrder == "RegNR" ? "RegNR_desc" : "RegNR";
             ViewBag.ColorSortParm = sortOrder == "Color" ? "Color_desc" : "Color";
             ViewBag.BrandSortParm = sortOrder == "Brand" ? "Brand_desc" : "Brand";
             ViewBag.ModelSortParm = sortOrder == "Model" ? "Model_desc" : "Model";
-            ViewBag.NRofWheelsSortParm = sortOrder == "NRofWheels" ? "NRofWheels_desc" : "NRofWheels";
+            ViewBag.MemberSortParm = sortOrder == "Member" ? "Member_desc" : "Member";
             ViewBag.CheckInTimeSortParm = sortOrder == "CheckInTime" ? "CheckInTime_desc" : "CheckInTime";
 
 
@@ -112,25 +112,22 @@ namespace garaget_2.Controllers
             if (!String.IsNullOrEmpty(searchString))
             {
                 vehicles = vehicles.Where(s => s.RegNr.Contains(searchString)
-                     || s.VehicleType.ToString().Contains(searchString)// ToString() = enum 
+                     || s.VehicleType.VehicleTypeName.Contains(searchString)
                      || s.Color.Contains(searchString)
                      || s.Brand.Contains(searchString)
-                     || s.Model.Contains(searchString)
-                     || s.NrOfWheels.ToString().Contains(searchString));// ToString() = int 
+                    // || s.Member.FullName.Contains(searchString)
+                     || s.Model.Contains(searchString));
+      
 
             }
-            //else
-            //{
-            //   vehicles = vehicles.Where(s => s.RegNR == "nnnnneeeeeeeeeeeeeejjjjj");
-  
-            //}
+
             switch (sortOrder)
             {
                 case "VehicleType_desc":
-                    vehicles = vehicles.OrderByDescending(s => s.VehicleType);
+                    vehicles = vehicles.OrderByDescending(s => s.VehicleType.VehicleTypeName);
                     break;
                 case "VehicleType":
-                    vehicles = vehicles.OrderBy(s => s.VehicleType);
+                    vehicles = vehicles.OrderBy(s => s.VehicleType.VehicleTypeName);
                     break;
 
                 case "RegNR_desc":
@@ -157,11 +154,11 @@ namespace garaget_2.Controllers
                 case "Model":
                     vehicles = vehicles.OrderBy(s => s.Model);
                     break;
-                case "NRofWheels_desc":
-                    vehicles = vehicles.OrderByDescending(s => s.NrOfWheels);
+                case "Member_desc":
+                    vehicles = vehicles.OrderByDescending(s => s.Member.FirstName);
                     break;
-                case "NRofWheels":
-                    vehicles = vehicles.OrderBy(s => s.NrOfWheels);
+                case "Member":
+                    vehicles = vehicles.OrderBy(s => s.Member.FirstName);
                     break;
                 case "CheckInTime_desc":
                     vehicles = vehicles.OrderByDescending(s => s.CheckInTime);
