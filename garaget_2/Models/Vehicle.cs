@@ -5,24 +5,20 @@ using System.Linq;
 using System.Web;
 
 namespace garaget_2.Models {
-    //public enum VehicleTypeList { Cykel, MC, Bil, SUV, Limousine, Bil_m_släp, Lastbil, Buss }
-    public enum VehicleTypeList { Bil, SUV, Limousine, MC, Cykel, Bil_m_släp, Lastbil, Buss, Annan }
 
     public class Vehicle {
-        public int Id { get; set; }
+        [Key]
+        public int VehicleId { get; set; }
 
-        [Display(Name = "Fordonstyp")]
-        public VehicleTypeList VehicleType { get; set; }
-
-        [Display(Name = "Reg.identitet")] 
+        [Display(Name = "Reg.identitet")]
         [Required(ErrorMessage = "Fråga efter legitimation, istället?")]
         [RegularExpression("^[a-zA-ZöäåÖÄÅ &%§.,-;:0-9]*$", ErrorMessage = "Programmeringstecken etc. är ej tillåtna!")]
         [MinLength(4, ErrorMessage = ("Enlig Wiki kan man inte identifiera det ni skrev!"))]
         [MaxLength(32, ErrorMessage = "Det här är inte rätt ställe att skriva noveller!")]
-        public string RegNR { get; set; }
+        public string RegNr { get; set; }
 
         [Display(Name = "Färg")]
-        [RegularExpression("^[a-zA-ZöäåÖÄÅ &%§.,-;:0-9]*$",ErrorMessage="Programmeringstecken etc. är ej tillåtna!")]
+        [RegularExpression("^[a-zA-ZöäåÖÄÅ &%§.,-;:0-9]*$", ErrorMessage = "Programmeringstecken etc. är ej tillåtna!")]
         [MinLength(3, ErrorMessage = "Vit, röd, blå, gul, blå & grå är korta färgnamn")]
         [MaxLength(32, ErrorMessage = "Det här är inte rätt ställe att skriva noveller!")]
         public string Color { get; set; }
@@ -41,9 +37,15 @@ namespace garaget_2.Models {
 
         [Display(Name = "Antal hjul")]
         [Range(1, 999, ErrorMessage = "Stridsvagnar/snöfordon med band skadar golvet. Hjul krävs!")]
-        public int NRofWheels { get; set; }
+        public int NrOfWheels { get; set; }
 
         [Display(Name = "Tidpunkt för incheckning")]
         public DateTime CheckInTime { get; set; }
+
+        public int MemberId { get; set; }
+        public int VehicleTypeId { get; set; }
+
+        public virtual Member Member { get; set; }
+        public virtual VehicleType VehicleType { get; set; }
     }
 }

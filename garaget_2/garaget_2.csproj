@@ -122,33 +122,25 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MembersController.cs" />
+    <Compile Include="Controllers\Vehicles2Controller.cs" />
     <Compile Include="Controllers\VehiclesController.cs" />
-    <Compile Include="DataAccessLayer\VehicleContext.cs" />
+    <Compile Include="DataAccessLayer\GarageContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201510201425308_Init.cs" />
-    <Compile Include="Migrations\201510201425308_Init.Designer.cs">
-      <DependentUpon>201510201425308_Init.cs</DependentUpon>
+    <Compile Include="Migrations\201510291109165_StartupGarageTvaFem.cs" />
+    <Compile Include="Migrations\201510291109165_StartupGarageTvaFem.Designer.cs">
+      <DependentUpon>201510291109165_StartupGarageTvaFem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201510211149284_enum vehicletypes.cs" />
-    <Compile Include="Migrations\201510211149284_enum vehicletypes.Designer.cs">
-      <DependentUpon>201510211149284_enum vehicletypes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201510220842206_enumchanges.cs" />
-    <Compile Include="Migrations\201510220842206_enumchanges.Designer.cs">
-      <DependentUpon>201510220842206_enumchanges.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201510220900233_again.....cs" />
-    <Compile Include="Migrations\201510220900233_again.....Designer.cs">
-      <DependentUpon>201510220900233_again.....cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201510220905438_changesinEnum.cs" />
-    <Compile Include="Migrations\201510220905438_changesinEnum.Designer.cs">
-      <DependentUpon>201510220905438_changesinEnum.cs</DependentUpon>
+    <Compile Include="Migrations\201510291114300_primaryKey_in_VehicleType.cs" />
+    <Compile Include="Migrations\201510291114300_primaryKey_in_VehicleType.Designer.cs">
+      <DependentUpon>201510291114300_primaryKey_in_VehicleType.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Member.cs" />
     <Compile Include="Models\Vehicle.cs" />
+    <Compile Include="Models\VehicleType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -200,6 +192,16 @@
     <Content Include="Views\Vehicles\_FoundVehicle.cshtml" />
     <Content Include="Views\Vehicles\Search.cshtml" />
     <Content Include="Views\Vehicles\Receipt.cshtml" />
+    <Content Include="Views\Members\Create.cshtml" />
+    <Content Include="Views\Members\Delete.cshtml" />
+    <Content Include="Views\Members\Details.cshtml" />
+    <Content Include="Views\Members\Edit.cshtml" />
+    <Content Include="Views\Members\Index.cshtml" />
+    <Content Include="Views\Vehicles2\Create.cshtml" />
+    <Content Include="Views\Vehicles2\Delete.cshtml" />
+    <Content Include="Views\Vehicles2\Details.cshtml" />
+    <Content Include="Views\Vehicles2\Edit.cshtml" />
+    <Content Include="Views\Vehicles2\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -212,20 +214,11 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201510201425308_Init.resx">
-      <DependentUpon>201510201425308_Init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201510291109165_StartupGarageTvaFem.resx">
+      <DependentUpon>201510291109165_StartupGarageTvaFem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201510211149284_enum vehicletypes.resx">
-      <DependentUpon>201510211149284_enum vehicletypes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201510220842206_enumchanges.resx">
-      <DependentUpon>201510220842206_enumchanges.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201510220900233_again.....resx">
-      <DependentUpon>201510220900233_again.....cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201510220905438_changesinEnum.resx">
-      <DependentUpon>201510220905438_changesinEnum.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201510291114300_primaryKey_in_VehicleType.resx">
+      <DependentUpon>201510291114300_primaryKey_in_VehicleType.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

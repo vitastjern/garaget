@@ -3,7 +3,7 @@ namespace garaget_2.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class again : DbMigration
+    public partial class primaryKey_in_VehicleType : DbMigration
     {
         public override void Up()
         {

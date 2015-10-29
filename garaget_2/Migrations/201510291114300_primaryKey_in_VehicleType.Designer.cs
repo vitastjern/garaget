@@ -7,18 +7,18 @@ namespace garaget_2.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class enumchanges : IMigrationMetadata
+    public sealed partial class primaryKey_in_VehicleType : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(enumchanges));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(primaryKey_in_VehicleType));
         
         string IMigrationMetadata.Id
         {
-            get { return "201510220842206_enumchanges"; }
+            get { return "201510291114300_primaryKey_in_VehicleType"; }
         }
         
         string IMigrationMetadata.Source
         {
-            get { return Resources.GetString("Source"); }
+            get { return null; }
         }
         
         string IMigrationMetadata.Target
