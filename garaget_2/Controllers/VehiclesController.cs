@@ -48,7 +48,7 @@ namespace garaget_2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,VehicleType,RegNR,Color,Brand,Model,NRofWheels")] Vehicle vehicle)
+        public ActionResult Create([Bind(Include = "VehicleId,VehicleType,RegNr,Color,Brand,Model,NrOfWheels")] Vehicle vehicle)
         {
             if (ModelState.IsValid)
             {
@@ -81,7 +81,7 @@ namespace garaget_2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,VehicleType,RegNR,Color,Brand,Model,NRofWheels,CheckInTime")] Vehicle vehicle)
+        public ActionResult Edit([Bind(Include = "VehicleId,VehicleType,RegNr,Color,Brand,Model,NrOfWheels,CheckInTime")] Vehicle vehicle)
         {
             if (ModelState.IsValid)
             {
@@ -115,7 +115,8 @@ namespace garaget_2.Controllers
                      || s.VehicleType.VehicleTypeName.Contains(searchString)
                      || s.Color.Contains(searchString)
                      || s.Brand.Contains(searchString)
-                    // || s.Member.FullName.Contains(searchString)
+                     || s.Member.FirstName.Contains(searchString)
+                     || s.Member.LastName.Contains(searchString)
                      || s.Model.Contains(searchString));
       
 
