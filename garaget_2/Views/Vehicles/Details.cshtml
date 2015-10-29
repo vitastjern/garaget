@@ -9,20 +9,29 @@
 <div>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.VehicleType)
-        </dt>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.MemberId).ToString()
+
+        </dt>
         <dd>
-            @Html.DisplayFor(model => model.VehicleType)
+            @Html.DisplayFor(model => model.Member.FullName)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.RegNR)
+            @Html.DisplayNameFor(model => model.VehicleTypeId).ToString() 
+           
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VehicleType.VehicleTypeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegNr)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.RegNR)
+            @Html.DisplayFor(model => model.RegNr)
         </dd>
 
         <dt>
@@ -50,11 +59,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.NRofWheels)
+            @Html.DisplayNameFor(model => model.NrOfWheels)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.NRofWheels)
+            @Html.DisplayFor(model => model.NrOfWheels)
         </dd>
 
     </dl>
@@ -62,6 +71,6 @@
 
 
         <p>
-            @Html.ActionLink("Edititera", "Edit", new { id = Model.Id }) |
+            @Html.ActionLink("Edititera", "Edit", new { id = Model.VehicleId }) |
             @Html.ActionLink("Fordon lista", "Search")
         </p>
