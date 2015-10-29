@@ -42,7 +42,9 @@ namespace garaget_2.Models {
         [Display(Name = "Tidpunkt för incheckning")]
         public DateTime CheckInTime { get; set; }
 
+        [Display(Name = "Medlem")]
         public int MemberId { get; set; }
+        [Display(Name = "Fordonstyp")]
         public int VehicleTypeId { get; set; }
 
         public virtual Member Member { get; set; }
