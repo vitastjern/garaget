@@ -15,25 +15,26 @@ namespace garaget_2.Migrations {
 
             context.VehicleTypes.AddOrUpdate(vt => vt.VehicleTypeName,
 
-            new VehicleType { VehicleTypeName = "Bil" },
-            new VehicleType { VehicleTypeName = "MC" },
-            new VehicleType { VehicleTypeName = "SUV" },
-            new VehicleType { VehicleTypeName = "Buss" },
-            new VehicleType { VehicleTypeName = "Lastbil" },
-            new VehicleType { VehicleTypeName = "Cykel" },
-            new VehicleType { VehicleTypeName = "UFO" },
-            new VehicleType { VehicleTypeName = "Annat" }
+            new VehicleType { VehicleTypeId = 1, VehicleTypeName = "Bil" },
+            new VehicleType { VehicleTypeId = 2, VehicleTypeName = "MC" },
+            new VehicleType { VehicleTypeId = 3, VehicleTypeName = "SUV" },
+            new VehicleType { VehicleTypeId = 4, VehicleTypeName = "Buss" },
+            new VehicleType { VehicleTypeId = 5, VehicleTypeName = "Lastbil" },
+            new VehicleType { VehicleTypeId = 6, VehicleTypeName = "Cykel" },
+            new VehicleType { VehicleTypeId = 7, VehicleTypeName = "UFO" },
+            new VehicleType { VehicleTypeId = 8, VehicleTypeName = "Annat" }
           );
 
             context.Members.AddOrUpdate(m => m.FirstName,
-                new Member { FirstName = "Niklas", LastName = "Säwensten", Street = "Greatway 49", PostalCode = "55555", City = "TimmerÖn" },
-                new Member { FirstName = "Kenneth", LastName = "Forsström", Street = "Genvägen 3", PostalCode = "333333", City = "Mörka Skogen" },
-                new Member { FirstName = "Anna", LastName = "Eklund", Street = "Hemvägen 5", PostalCode = "11111", City = "Staden" }
+                new Member { MemberId = 1, FirstName = "Niklas", LastName = "Säwensten", Street = "Greatway 49", PostalCode = "55555", City = "TimmerÖn" },
+                new Member { MemberId = 2, FirstName = "Kenneth", LastName = "Forsström", Street = "Genvägen 3", PostalCode = "333333", City = "Mörka Skogen" },
+                new Member { MemberId = 3, FirstName = "Anna", LastName = "Eklund", Street = "Hemvägen 5", PostalCode = "11111", City = "Staden" }
                 );
 
             context.Vehicles.AddOrUpdate(v => v.RegNr,
                 new Vehicle
                 {
+                    VehicleId = 1,
                     RegNr = "Vinsten",
                     Color = "Silvermetallic",
                     Brand = "Fård",
@@ -45,6 +46,7 @@ namespace garaget_2.Migrations {
                 },
                 new Vehicle
                 {
+                    VehicleId = 2,
                     RegNr = "Annas",
                     Color = "Blå",
                     Brand = "Opel",
@@ -56,6 +58,7 @@ namespace garaget_2.Migrations {
                 },
                 new Vehicle
                 {
+                    VehicleId = 3,
                     RegNr = "ABC123",
                     Color = "Blå",
                     Brand = "Opel",
