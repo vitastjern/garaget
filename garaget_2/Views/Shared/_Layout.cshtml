@@ -16,28 +16,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Garage 2.0", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Garage 2.5", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     @*<li>@Html.ActionLink("Hem", "Index", "Home")</li>*@
                     <li>@Html.ActionLink("Om Oss", "About", "Home")</li>
                     <li>@Html.ActionLink("Kontakt", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Vehicles", "Search", "Vehicles")</li>
-                    <li>@Html.ActionLink("Members", "Index", "Members")</li>
-                    <li>
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">
-                            Fordon<b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu">
-                            @*<li>@Html.ActionLink("Garaget", "Index", "Vehicles")</li>
-                            <li class="divider"></li>*@
-                            <li>@Html.ActionLink("Checka in", "Create", "Vehicles")</li>
-                            @*<li>@Html.ActionLink("Checka ut", "CheckOut", "Vehicles")</li>*@
-                            <li>@Html.ActionLink("Checka ut/Sökning", "search", "Vehicles")</li>
-                        </ul>
-
-                </ul>
+                    <li>@Html.ActionLink("Medlemsparkering", "Index", "Members")</li>
+                    <li>@Html.ActionLink("Incheckade fordon", "Search", "Vehicles")</li>
+                 </ul>
             </div>
         </div>
     </div>
@@ -53,11 +41,11 @@
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
     <script>
-    $(function () {
-        $(window).on("load resize", function () {
-            $(".fill-screen").css("height", window.innerHeight);
+        $(function () {
+            $(window).on("load resize", function () {
+                $(".fill-screen").css("height", window.innerHeight);
+            });
         });
-    });
     </script>
 
 

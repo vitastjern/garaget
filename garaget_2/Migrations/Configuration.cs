@@ -15,6 +15,7 @@ namespace garaget_2.Migrations {
 
             context.VehicleTypes.AddOrUpdate(vt => vt.VehicleTypeName,
 
+
             new VehicleType { VehicleTypeId = 1, VehicleTypeName = "Bil" },
             new VehicleType { VehicleTypeId = 2, VehicleTypeName = "MC" },
             new VehicleType { VehicleTypeId = 3, VehicleTypeName = "SUV" },
