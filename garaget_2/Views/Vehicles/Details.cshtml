@@ -4,7 +4,7 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Fordonsbeskrivning</h2>
+<h2>Incheckat fordon</h2>
 
 <div>
     <hr />
@@ -72,5 +72,6 @@
 
         <p>
             @Html.ActionLink("Ändra", "Edit", new { id = Model.VehicleId }) |
-            @Html.ActionLink("Incheckade fordon", "Search")
+            @Html.ActionLink("Till medlemslistan", "Index", "Members") | 
+            @Html.ActionLink("Incheckade fordon", "Index")
         </p>
