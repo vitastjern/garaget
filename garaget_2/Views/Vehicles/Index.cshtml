@@ -4,7 +4,9 @@
     ViewBag.Title = "Search";
 }
 
-<h2>Ange söksträng</h2>
+<h2>Översiktsvy</h2>
+
+<h3>Ange söksträng</h3>
 
 @using (Html.BeginForm())
 {
@@ -14,10 +16,10 @@
     </p>
 }
 
-<h2>Incheckade fordon</h2>
+<h3>@Html.ActionLink("Gå till detaljerad översiktsvy", "search")</h3>
 <br />
 
-@Html.ActionLink("Incheckade fordon", "Search")
+@Html.ActionLink("Fordon lista", "search")
 
 <table class="table">
     <tr>

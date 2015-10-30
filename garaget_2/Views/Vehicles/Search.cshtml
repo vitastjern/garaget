@@ -4,7 +4,10 @@
     ViewBag.Title = "Search";
 }
 
-<h2>Ange söksträng</h2>
+
+<h2>Detaljerad översiktsvy</h2>
+
+<h3>Ange söksträng</h3>
 
 @using (Html.BeginForm())
 {
@@ -14,7 +17,7 @@
     </p>
 }
 
-<h2>Incheckade fordon</h2>
+<h3>@Html.ActionLink("Gå till Översiktsvy", "index")</h3>
 <br />
 
 
@@ -35,10 +38,13 @@
             <th>
                 @Html.ActionLink(HttpUtility.HtmlDecode(Html.DisplayNameFor(model => model.Model).ToString()), "Search", new { sortOrder = ViewBag.ModelSortParm, searchString = ViewBag.searchString })
             </th>
+
+            <th>
+                @Html.ActionLink(HttpUtility.HtmlDecode(Html.DisplayNameFor(model => model.NrOfWheels).ToString()), "Search", new { sortOrder = ViewBag.NrOfWheelsSortParm, searchString = ViewBag.searchString })
+            </th>
+
             <th>
                @Html.ActionLink(HttpUtility.HtmlDecode(Html.DisplayNameFor(model => model.MemberId).ToString()), "Search", new { sortOrder = ViewBag.MemberSortParm, searchString = ViewBag.searchString })
-
-
              </th>
             <th>
                 @Html.ActionLink(HttpUtility.HtmlDecode(Html.DisplayNameFor(model => model.CheckInTime).ToString()), "Search", new { sortOrder = ViewBag.CheckInTimeSortParm, searchString = ViewBag.searchString })
@@ -65,6 +71,9 @@
                     @Html.DisplayFor(modelItem => item.Model)
                 </td>
                 <td>
+                    @Html.DisplayFor(modelItem => item.NrOfWheels)
+                </td>
+                <td>
                     @Html.DisplayFor(modelItem => item.Member.FullName)
                 </td>
                 <td>
@@ -78,5 +87,5 @@
                 </td>
             </tr>
 }
-
+    
     </table>
