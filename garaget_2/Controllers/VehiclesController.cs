@@ -167,9 +167,10 @@ namespace garaget_2.Controllers
                      || s.VehicleType.VehicleTypeName.Contains(searchString)
                      || s.Color.Contains(searchString)
                      || s.Brand.Contains(searchString)
-                     || s.Member.FirstName.Contains(searchString)
+                     || s.Member.FirstName.Contains(searchString) 
                      || s.Member.LastName.Contains(searchString)
                      || s.Model.Contains(searchString)
+                     || s.Member.FullName.Contains(searchString)
                      || s.NrOfWheels.ToString().Contains(searchString));// ToString() = int ;
                }
 
