@@ -39,18 +39,30 @@ namespace garaget_2.Migrations {
                 new Vehicle
                 {
                     VehicleId = 1,
+                    RegNr = "JHK324",
+                    Color = "Vit",
+                    Brand = "Mercedes",
+                    Model = "SL 500",
+                    NrOfWheels = 4,
+                    MemberId = 1,
+                    VehicleTypeId = 1,
+                    CheckInTime = DateTime.Now.AddDays(-4).AddMinutes(-29).AddSeconds(13)
+                },
+                new Vehicle
+                {
+                    VehicleId = 2,
                     RegNr = "Vinsten",
                     Color = "Silvermetallic",
                     Brand = "Fård",
                     Model = "350",
                     NrOfWheels = 4,
                     MemberId = 2,
-                    VehicleTypeId = 2,
+                    VehicleTypeId = 1,
                     CheckInTime = DateTime.Now.AddDays(-4).AddMinutes(-29).AddSeconds(13)
                 },
                 new Vehicle
                 {
-                    VehicleId = 2,
+                    VehicleId = 3,
                     RegNr = "Annas",
                     Color = "Blå",
                     Brand = "Opel",
@@ -62,7 +74,7 @@ namespace garaget_2.Migrations {
                 },
                 new Vehicle
                 {
-                    VehicleId = 3,
+                    VehicleId = 4,
                     RegNr = "FGR456",
                     Color = "Grön",
                     Brand = "VW",
@@ -74,19 +86,19 @@ namespace garaget_2.Migrations {
                 },
                 new Vehicle
                 {
-                    VehicleId = 4,
-                    RegNr = "Annas",
-                    Color = "Blå",
+                    VehicleId = 5,
+                    RegNr = "HJK343",
+                    Color = "Röd",
                     Brand = "Opel",
-                    Model = "Record",
+                    Model = "Kadett",
                     NrOfWheels = 4,
                     MemberId = 5,
-                    VehicleTypeId = 7,
+                    VehicleTypeId = 1,
                     CheckInTime = DateTime.Now.AddDays(-1).AddMinutes(-10).AddSeconds(10)
                 },
                 new Vehicle
                 {
-                    VehicleId = 4,
+                    VehicleId = 6,
                     RegNr = "20020229-0229",
                     Color = "Blå-vit-svart",
                     Brand = "Cresent",
@@ -98,11 +110,59 @@ namespace garaget_2.Migrations {
                 },
                 new Vehicle
                 {
-                    VehicleId = 5,
-                    RegNr = "ABC123",
+                    VehicleId = 7,
+                    RegNr = "DFR233",
+                    Color = "Svart",
+                    Brand = "DKW",
+                    Model = "Raser",
+                    NrOfWheels = 2,
+                    MemberId = 4,
+                    VehicleTypeId = 2,
+                    CheckInTime = DateTime.Now.AddDays(-1).AddMinutes(-10).AddSeconds(10)
+                },
+                new Vehicle
+                {
+                    VehicleId = 8,
+                    RegNr = "HYI222",
+                    Color = "Vit",
+                    Brand = "Hyandi",
+                    Model = "Vectir",
+                    NrOfWheels = 4,
+                    MemberId = 5,
+                    VehicleTypeId = 3,
+                    CheckInTime = DateTime.Now.AddDays(-1).AddMinutes(-10).AddSeconds(10)
+                },
+                new Vehicle
+                {
+                    VehicleId = 9,
+                    RegNr = "Ragge",
+                    Color = "Blåmetallic",
+                    Brand = "Chevrolet",
+                    Model = "Bigblock",
+                    NrOfWheels = 6,
+                    MemberId = 6,
+                    VehicleTypeId = 3,
+                    CheckInTime = DateTime.Now.AddDays(-1).AddMinutes(-10).AddSeconds(10)
+                },
+                new Vehicle
+                {
+                    VehicleId = 10,
+                    RegNr = "229-GHY",
+                    Color = "Röd",
+                    Brand = "Vaz",
+                    Model = "Uno",
+                    NrOfWheels = 4,
+                    MemberId = 6,
+                    VehicleTypeId = 1,
+                    CheckInTime = DateTime.Now.AddDays(-1).AddMinutes(-10).AddSeconds(10)
+                },
+                new Vehicle
+                {
+                    VehicleId = 11,
+                    RegNr = "ABE334",
                     Color = "Blå",
                     Brand = "Opel",
-                    Model = "Record",
+                    Model = "Capitan",
                     NrOfWheels = 4,
                     MemberId = 6,
                     VehicleTypeId = 1,
