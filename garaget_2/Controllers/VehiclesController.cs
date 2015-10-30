@@ -40,8 +40,10 @@ namespace garaget_2.Controllers
         // GET: Vehicles/Create
         public ActionResult Create(int id)
         {
-            ViewBag.Member = db.Members.Where(m => m.MemberId == id);
-            return View();
+            ViewBag.MemberId = id;
+            ViewBag.Member = db.Members.Where(m => m.MemberId == id).First();
+            Vehicle model = new Vehicle {MemberId = id};
+            return View(model);
         }
 
         // POST: Vehicles/Create
@@ -49,17 +51,18 @@ namespace garaget_2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "VehicleId,VehicleType,RegNr,Color,Brand,Model,NrOfWheels")] Vehicle vehicle)
+        public ActionResult Create([Bind(Include = "VehicleId,RegNr,Color,Brand,Model,NrOfWheels,MemberId")] Vehicle vehicle2)
         {
             if (ModelState.IsValid)
             {
-                vehicle.CheckInTime = DateTime.Now;
-                db.Vehicles.Add(vehicle);
+                vehicle2.VehicleTypeId = 3;
+                vehicle2.CheckInTime = DateTime.Now;
+                db.Vehicles.Add(vehicle2);
                 db.SaveChanges();
                 return RedirectToAction("Search");
             }
 
-            return View(vehicle);
+            return View(vehicle2);
         }
 
         // GET: Vehicles/Edit/5
@@ -197,7 +200,9 @@ namespace garaget_2.Controllers
         // GET: Vehicles/MemberOwnedVehicles
         public ActionResult MemberOwnedVehicles(int id)
         {
-            ViewBag.Member = db.Members.Where(m => m.MemberId == id); 
+            ViewBag.MemberId = id;
+            ViewBag.Member = db.Members.Where(m => m.MemberId == id).First();
+       
             var model = db.Vehicles.Where(v => v.MemberId == id).ToList();
             return View(model);
         }

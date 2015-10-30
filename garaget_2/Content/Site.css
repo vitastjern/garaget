@@ -51,3 +51,8 @@ textarea {
     background-attachment: fixed;
 }
 
+.name-presentation {
+    font-weight: bold;
+    font-size: larger;
+    text-align: left;
+}
