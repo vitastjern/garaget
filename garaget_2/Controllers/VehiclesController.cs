@@ -77,6 +77,8 @@ namespace garaget_2.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.MemberId = new SelectList(db.Members, "MemberId", "FirstName", vehicle.MemberId);
+            ViewBag.VehicleTypeId = new SelectList(db.VehicleTypes, "VehicleTypeId", "VehicleTypeName", vehicle.VehicleTypeId);
             return View(vehicle);
         }
 
@@ -85,7 +87,7 @@ namespace garaget_2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "VehicleId,VehicleType,RegNr,Color,Brand,Model,NrOfWheels,CheckInTime")] Vehicle vehicle)
+        public ActionResult Edit([Bind(Include = "VehicleId,RegNr,Color,Brand,Model,NrOfWheels,CheckInTime,MemberId,VehicleTypeId")] Vehicle vehicle)
         {
             if (ModelState.IsValid)
             {
@@ -95,7 +97,6 @@ namespace garaget_2.Controllers
             }
             return View(vehicle);
         }
-
         
         // [HttpPost]
         public ViewResult Search(string sortOrder, string searchString)
