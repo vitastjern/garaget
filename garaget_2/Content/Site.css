@@ -7,6 +7,12 @@
 
 }
 
+xxx {
+    color: gray;
+}
+
+
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
@@ -30,6 +36,7 @@ textarea {
 .rubrik {
     font-weight: bold;
 }
+
 
 .fill-screen {
     padding-bottom:80px;
