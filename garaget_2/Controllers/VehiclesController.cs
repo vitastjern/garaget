@@ -105,7 +105,7 @@ namespace garaget_2.Controllers
                 vehicle2.CheckInTime = DateTime.Now;
                 db.Vehicles.Add(vehicle2);
                 db.SaveChanges();
-                return RedirectToAction("Index", "Members");
+                return RedirectToAction("Details", "Vehicles", new { id = vehicle2.VehicleId });
             }
 
             return View(vehicle2);
@@ -242,10 +242,10 @@ namespace garaget_2.Controllers
 
 
         [HttpPost]
-        public ActionResult CheckOut(string RegNR)
+        public ActionResult CheckOut(string RegNr)
         {
 
-            var model = db.Vehicles.Where(i => i.RegNr == RegNR).ToList();
+            var model = db.Vehicles.Where(i => i.RegNr == RegNr).ToList();
             return View(model);
 
         }
