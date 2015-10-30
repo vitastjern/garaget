@@ -33,6 +33,8 @@ namespace garaget_2.Models {
                 return fullName;
             }
         }
+        
+        public virtual ICollection<Vehicle> Vehicle { get; set; }
 
         [Display(Name="Adress")]
         public string Address

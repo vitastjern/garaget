@@ -11,5 +11,7 @@ namespace garaget_2.Models {
 
         [Display(Name="Fordonstyp")]
         public string VehicleTypeName { get; set; }
+
+        public virtual ICollection<Vehicle> Vehicle { get; set; }
     }
 }
