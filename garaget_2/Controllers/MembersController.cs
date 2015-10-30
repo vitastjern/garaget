@@ -16,9 +16,49 @@ namespace garaget_2.Controllers
         private GarageContext db = new GarageContext();
 
         // GET: Members
-        public ActionResult Index()
+        //public ActionResult Index()
+        //{
+        //    return View(db.Members.ToList());
+        //}
+
+        public ViewResult Index(string sortOrder, string searchString)
         {
-            return View(db.Members.ToList());
+            ViewBag.FullNameSortParm = sortOrder == "FullName" ? "FullName_desc" : "FullName";
+            ViewBag.AddressSortParm = sortOrder == "Address" ? "Address_desc" : "Address";
+
+
+            ViewBag.searchString = searchString;
+            var member = from s in db.Members select s;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                member = member.Where(s => s.FirstName.Contains(searchString)
+                        || s.LastName.Contains(searchString)
+                        || s.Street.Contains(searchString)
+                        || s.City.Contains(searchString)
+                        || s.PostalCode.Contains(searchString));
+                      }
+
+            switch (sortOrder)
+            {
+                case "FullName_desc":
+                    member = member.OrderByDescending(s => s.FirstName);
+                    break;
+                case "FullName":
+                    member = member.OrderBy(s => s.FirstName);
+                    break;
+
+                case "Address_desc":
+                    member = member.OrderByDescending(s => s.Street);
+                    break;
+                case "Address":
+                    member = member.OrderBy(s => s.Street);
+                    break;
+                default:
+                    member = member.OrderByDescending(s => s.FirstName);
+                    break;
+            }
+            return View(member.ToList());
         }
 
         // GET: Members/Details/5

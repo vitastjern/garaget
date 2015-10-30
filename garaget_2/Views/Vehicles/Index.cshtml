@@ -5,7 +5,7 @@
 }
 
 <h2>Översiktsvy</h2>
-
+<p>@Html.ActionLink("Gå till detaljerad översiktsvy", "search")</p>
 <h3>Ange söksträng</h3>
 
 @using (Html.BeginForm())
@@ -16,7 +16,7 @@
     </p>
 }
 
-<h3>@Html.ActionLink("Gå till detaljerad översiktsvy", "search")</h3>
+
 <br />
 
 
@@ -24,13 +24,13 @@
 <table class="table">
     <tr>
         <th>
-            @Html.ActionLink(HttpUtility.HtmlDecode(Html.DisplayNameFor(model => model.VehicleTypeId).ToString()), "Search", new { sortOrder = ViewBag.VehicleTypeSortParm, searchString = ViewBag.searchString })
+            @Html.ActionLink(HttpUtility.HtmlDecode(Html.DisplayNameFor(model => model.VehicleTypeId).ToString()), "index", new { sortOrder = ViewBag.VehicleTypeSortParm, searchString = ViewBag.searchString })
         </th>
         <th>
-            @Html.ActionLink(HttpUtility.HtmlDecode(Html.DisplayNameFor(model => model.RegNr).ToString()), "Search", new { sortOrder = ViewBag.RegNRSortParm, searchString = ViewBag.searchString })
+            @Html.ActionLink(HttpUtility.HtmlDecode(Html.DisplayNameFor(model => model.RegNr).ToString()), "index", new { sortOrder = ViewBag.RegNRSortParm, searchString = ViewBag.searchString })
         </th>
         <th>
-            @Html.ActionLink(HttpUtility.HtmlDecode(Html.DisplayNameFor(model => model.MemberId).ToString()), "Search", new { sortOrder = ViewBag.MemberSortParm, searchString = ViewBag.searchString })
+            @Html.ActionLink(HttpUtility.HtmlDecode(Html.DisplayNameFor(model => model.MemberId).ToString()), "index", new { sortOrder = ViewBag.MemberSortParm, searchString = ViewBag.searchString })
         </th>
 
         <th></th>

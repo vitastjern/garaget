@@ -4,25 +4,39 @@
     ViewBag.Title = "Index";
 }
 
+
+
 <h2>Medlemslista</h2>
 
 <p>
     @Html.ActionLink("Lägg till en ny medlem", "Create")
 </p>
+
+
+<h3>Ange söksträng</h3>
+
+@using (Html.BeginForm())
+{
+    <p>
+        @Html.TextBox("SearchString")
+        <input type="submit" value="Sök" />
+    </p>
+}
+
+
+<br />
+
+
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.FullName)
+            @Html.ActionLink(HttpUtility.HtmlDecode(Html.DisplayNameFor(model => model.FullName).ToString()), "index", new { sortOrder = ViewBag.FullNameSortParm, searchString = ViewBag.searchString })
+            @*@Html.DisplayNameFor(model => model.FullName)*@
         </th>  
         <th>
-            @Html.DisplayNameFor(model => model.Address)
+            @Html.ActionLink(HttpUtility.HtmlDecode(Html.DisplayNameFor(model => model.Address).ToString()), "index", new { sortOrder = ViewBag.AddressSortParm, searchString = ViewBag.searchString })
+            @*@Html.DisplayNameFor(model => model.Address)*@
         </th>
-        @*<th>
-            @Html.DisplayNameFor(model => model.PostalCode)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.City)
-        </th>*@
         <th></th>
     </tr>
 
@@ -34,12 +48,6 @@
         <td>
             @Html.DisplayFor(modelItem => item.Address)
         </td>
-        @*<td>
-            @Html.DisplayFor(modelItem => item.PostalCode)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.City)
-        </td>*@
         <td>
             @Html.ActionLink("Ändra", "Edit", new { id=item.MemberId }) |
             @Html.ActionLink("Detaljer", "Details", new { id=item.MemberId }) |
