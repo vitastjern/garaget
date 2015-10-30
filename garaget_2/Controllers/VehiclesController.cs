@@ -17,9 +17,51 @@ namespace garaget_2.Controllers
         private GarageContext db = new GarageContext();
 
         // GET: Vehicles
-        public ActionResult Index()
+        public ViewResult Index(string sortOrder, string searchString)
         {
-            return View(db.Vehicles.ToList());
+
+            ViewBag.VehicleTypeSortParm = sortOrder == "VehicleType" ? "VehicleType_desc" : "VehicleType";
+            ViewBag.RegNRSortParm = sortOrder == "RegNR" ? "RegNR_desc" : "RegNR";
+            ViewBag.MemberSortParm = sortOrder == "Member" ? "Member_desc" : "Member";
+         
+            ViewBag.searchString = searchString;
+            var vehicles = from s in db.Vehicles select s;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                vehicles = vehicles.Where(s => s.RegNr.Contains(searchString)
+                     || s.VehicleType.VehicleTypeName.Contains(searchString)
+                     || s.Member.FirstName.Contains(searchString)
+                     || s.Member.LastName.Contains(searchString));
+                     
+            }
+
+            switch (sortOrder)
+            {
+                case "VehicleType_desc":
+                    vehicles = vehicles.OrderByDescending(s => s.VehicleType.VehicleTypeName);
+                    break;
+                case "VehicleType":
+                    vehicles = vehicles.OrderBy(s => s.VehicleType.VehicleTypeName);
+                    break;
+
+                case "RegNR_desc":
+                    vehicles = vehicles.OrderByDescending(s => s.RegNr);
+                    break;
+                case "RegNR":
+                    vehicles = vehicles.OrderBy(s => s.RegNr);
+                    break;
+                case "Member_desc":
+                    vehicles = vehicles.OrderByDescending(s => s.Member.FirstName);
+                    break;
+                case "Member":
+                    vehicles = vehicles.OrderBy(s => s.Member.FirstName);
+                    break;
+                default:
+                    vehicles = vehicles.OrderByDescending(s => s.RegNr);
+                    break;
+            }
+            return View(vehicles.ToList());
         }
 
         // GET: Vehicles/Details/5
