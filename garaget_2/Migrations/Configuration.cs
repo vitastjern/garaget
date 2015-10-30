@@ -33,24 +33,39 @@ namespace garaget_2.Migrations {
                 new Member { MemberId = 4, FirstName = "Bo", LastName = "Ek", Street = "Away 1", PostalCode = "55555", City = "Köping" },
                 new Member { MemberId = 5, FirstName = "Ulla", LastName = "Ölund", Street = "Senvägen 17", PostalCode = "45676", City = "Enköping" },
                 new Member { MemberId = 6, FirstName = "Bella", LastName = "Skog", Street = "Kortgränd ½", PostalCode = "11111", City = "Tvåköping" }
+                new Member { MemberId = 7, FirstName = "Klas", LastName = "Ekskog", Street = "Waylong 1", PostalCode = "52-55-55", City = "Thecity" },
+                new Member { MemberId = 8, FirstName = "Greta", LastName = "Stenberg", Street = "Stenvägen 87", PostalCode = "624 52", City = "Boden" },
+                new Member { MemberId = 9, FirstName = "Sven", LastName = "Norrlund", Street = "Långvängen 983", PostalCode = "982 58", City = "Luleå" }
                 );
 
             context.Vehicles.AddOrUpdate(v => v.RegNr,
                 new Vehicle
                 {
                     VehicleId = 1,
+                    RegNr = "JHK324",
+                    Color = "Vit",
+                    Brand = "Mercedes",
+                    Model = "SL 500",
+                    NrOfWheels = 4,
+                    MemberId = 1,
+                    VehicleTypeId = 1,
+                    CheckInTime = DateTime.Now.AddDays(-4).AddMinutes(-29).AddSeconds(13)
+                },
+                new Vehicle
+                {
+                    VehicleId = 2,
                     RegNr = "Vinsten",
                     Color = "Silvermetallic",
                     Brand = "Fård",
                     Model = "350",
                     NrOfWheels = 4,
                     MemberId = 2,
-                    VehicleTypeId = 2,
+                    VehicleTypeId = 1,
                     CheckInTime = DateTime.Now.AddDays(-4).AddMinutes(-29).AddSeconds(13)
                 },
                 new Vehicle
                 {
-                    VehicleId = 2,
+                    VehicleId = 3,
                     RegNr = "Annas",
                     Color = "Blå",
                     Brand = "Opel",
@@ -62,31 +77,31 @@ namespace garaget_2.Migrations {
                 },
                 new Vehicle
                 {
-                    VehicleId = 3,
+                    VehicleId = 4,
                     RegNr = "FGR456",
                     Color = "Grön",
                     Brand = "VW",
                     Model = "1300 s",
                     NrOfWheels = 4,
-                    MemberId = 4,
+                    MemberId = 8,
                     VehicleTypeId = 1,
                     CheckInTime = DateTime.Now.AddDays(-2).AddMinutes(-56).AddSeconds(36)
                 },
                 new Vehicle
                 {
-                    VehicleId = 4,
-                    RegNr = "Annas",
-                    Color = "Blå",
+                    VehicleId = 5,
+                    RegNr = "HJK343",
+                    Color = "Röd",
                     Brand = "Opel",
-                    Model = "Record",
+                    Model = "Kadett",
                     NrOfWheels = 4,
-                    MemberId = 5,
-                    VehicleTypeId = 7,
+                    MemberId = 8,
+                    VehicleTypeId = 1,
                     CheckInTime = DateTime.Now.AddDays(-1).AddMinutes(-10).AddSeconds(10)
                 },
                 new Vehicle
                 {
-                    VehicleId = 4,
+                    VehicleId = 6,
                     RegNr = "20020229-0229",
                     Color = "Blå-vit-svart",
                     Brand = "Cresent",
@@ -98,11 +113,59 @@ namespace garaget_2.Migrations {
                 },
                 new Vehicle
                 {
-                    VehicleId = 5,
-                    RegNr = "ABC123",
+                    VehicleId = 7,
+                    RegNr = "DFR233",
+                    Color = "Svart",
+                    Brand = "DKW",
+                    Model = "Raser",
+                    NrOfWheels = 2,
+                    MemberId = 4,
+                    VehicleTypeId = 2,
+                    CheckInTime = DateTime.Now.AddDays(-1).AddMinutes(-10).AddSeconds(10)
+                },
+                new Vehicle
+                {
+                    VehicleId = 8,
+                    RegNr = "HYI222",
+                    Color = "Vit",
+                    Brand = "Hyandi",
+                    Model = "Vectir",
+                    NrOfWheels = 4,
+                    MemberId = 5,
+                    VehicleTypeId = 3,
+                    CheckInTime = DateTime.Now.AddDays(-1).AddMinutes(-10).AddSeconds(10)
+                },
+                new Vehicle
+                {
+                    VehicleId = 9,
+                    RegNr = "Ragge",
+                    Color = "Blåmetallic",
+                    Brand = "Chevrolet",
+                    Model = "Bigblock",
+                    NrOfWheels = 6,
+                    MemberId = 6,
+                    VehicleTypeId = 3,
+                    CheckInTime = DateTime.Now.AddDays(-1).AddMinutes(-10).AddSeconds(10)
+                },
+                new Vehicle
+                {
+                    VehicleId = 10,
+                    RegNr = "229-GHY",
+                    Color = "Röd",
+                    Brand = "Vaz",
+                    Model = "Uno",
+                    NrOfWheels = 4,
+                    MemberId = 6,
+                    VehicleTypeId = 1,
+                    CheckInTime = DateTime.Now.AddDays(-1).AddMinutes(-10).AddSeconds(10)
+                },
+                new Vehicle
+                {
+                    VehicleId = 11,
+                    RegNr = "ABE334",
                     Color = "Blå",
                     Brand = "Opel",
-                    Model = "Record",
+                    Model = "Capitan",
                     NrOfWheels = 4,
                     MemberId = 6,
                     VehicleTypeId = 1,

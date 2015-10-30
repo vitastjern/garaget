@@ -105,7 +105,7 @@ namespace garaget_2.Controllers
                 vehicle2.CheckInTime = DateTime.Now;
                 db.Vehicles.Add(vehicle2);
                 db.SaveChanges();
-                return RedirectToAction("Search");
+                return RedirectToAction("Index", "Members");
             }
 
             return View(vehicle2);
