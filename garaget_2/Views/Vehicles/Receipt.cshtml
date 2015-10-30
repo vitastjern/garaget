@@ -10,7 +10,7 @@
     <hr />
     <div class="row">
         <div class="col-md-6 rubrik">
-            @Html.DisplayNameFor(model => model.VehicleTypeId).ToString()
+            @Html.DisplayNameFor(model => model.VehicleTypeId)
         </div>
         <div class="col-md-6">
             @Html.DisplayFor(model => model.VehicleType.VehicleTypeName)
@@ -53,6 +53,6 @@
 <br />
 <p>
     @Html.ActionLink("Skriv ut kvitto", "GeneratePDF", Model) |
-    @Html.ActionLink("Tillbaka till garaget", "search")
+    @Html.ActionLink("Startsidan", "Index", "Home")
 </p>
 

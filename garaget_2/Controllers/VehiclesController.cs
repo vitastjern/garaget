@@ -85,6 +85,10 @@ namespace garaget_2.Controllers
             ViewBag.MemberId = id;
             ViewBag.Member = db.Members.Where(m => m.MemberId == id).First();
             Vehicle model = new Vehicle {MemberId = id};
+
+            //ViewBag.MemberId = new SelectList(db.Members, "MemberId", "FirstName");
+            ViewBag.VehicleTypeId = new SelectList(db.VehicleTypes, "VehicleTypeId", "VehicleTypeName");
+
             return View(model);
         }
 
@@ -93,11 +97,11 @@ namespace garaget_2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "VehicleId,RegNr,Color,Brand,Model,NrOfWheels,MemberId")] Vehicle vehicle2)
+        public ActionResult Create([Bind(Include = "VehicleId,RegNr,Color,Brand,Model,NrOfWheels,MemberId,VehicleTypeId")] Vehicle vehicle2)
         {
             if (ModelState.IsValid)
             {
-                vehicle2.VehicleTypeId = 3;
+                //vehicle2.VehicleTypeId = 3;
                 vehicle2.CheckInTime = DateTime.Now;
                 db.Vehicles.Add(vehicle2);
                 db.SaveChanges();
@@ -276,6 +280,7 @@ namespace garaget_2.Controllers
             db.SaveChanges();
 
             TempData["vehicle"] = vehicle;
+         
 
             return RedirectToAction("Receipt", vehicle);
         }

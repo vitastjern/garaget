@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
@@ -37,6 +39,8 @@ namespace garaget_2.Models {
 
         [Display(Name = "Antal hjul")]
         [Range(1, 999, ErrorMessage = "Stridsvagnar/snöfordon med band skadar golvet. Hjul krävs!")]
+        //[JsonProperty("NrOfWheels", DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate)]
+        //[DefaultValue(4)]
         public int NrOfWheels { get; set; }
 
         [Display(Name = "Tidpunkt för incheckning")]

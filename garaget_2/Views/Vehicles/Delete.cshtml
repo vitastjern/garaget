@@ -6,11 +6,20 @@
 
 <h2>Checka ut</h2>
 
-<h3>Är det här fordonet du vill checka ut ur garaget?</h3>
+<h3>Är det här det fordon som du vill checka ut ur garaget?</h3>
 <div>
     
     <hr />
     <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MemberId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model=> model.MemberId)
+        </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.VehicleTypeId).ToString()
             
@@ -67,7 +76,7 @@
 
         <div class="form-actions no-color">
             <input type="submit" value="Checka ut" class="btn btn-default" /> 
-            @Html.ActionLink("Fordon lista", "search")
+            @Html.ActionLink("Incheckade fordon", "search")
         </div>
     }
 </div>
