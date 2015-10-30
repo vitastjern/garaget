@@ -33,6 +33,9 @@ namespace garaget_2.Migrations {
                 new Member { MemberId = 4, FirstName = "Bo", LastName = "Ek", Street = "Away 1", PostalCode = "55555", City = "Köping" },
                 new Member { MemberId = 5, FirstName = "Ulla", LastName = "Ölund", Street = "Senvägen 17", PostalCode = "45676", City = "Enköping" },
                 new Member { MemberId = 6, FirstName = "Bella", LastName = "Skog", Street = "Kortgränd ½", PostalCode = "11111", City = "Tvåköping" }
+                new Member { MemberId = 7, FirstName = "Klas", LastName = "Ekskog", Street = "Waylong 1", PostalCode = "52-55-55", City = "Thecity" },
+                new Member { MemberId = 8, FirstName = "Greta", LastName = "Stenberg", Street = "Stenvägen 87", PostalCode = "624 52", City = "Boden" },
+                new Member { MemberId = 9, FirstName = "Sven", LastName = "Norrlund", Street = "Långvängen 983", PostalCode = "982 58", City = "Luleå" }
                 );
 
             context.Vehicles.AddOrUpdate(v => v.RegNr,
@@ -80,7 +83,7 @@ namespace garaget_2.Migrations {
                     Brand = "VW",
                     Model = "1300 s",
                     NrOfWheels = 4,
-                    MemberId = 4,
+                    MemberId = 8,
                     VehicleTypeId = 1,
                     CheckInTime = DateTime.Now.AddDays(-2).AddMinutes(-56).AddSeconds(36)
                 },
@@ -92,7 +95,7 @@ namespace garaget_2.Migrations {
                     Brand = "Opel",
                     Model = "Kadett",
                     NrOfWheels = 4,
-                    MemberId = 5,
+                    MemberId = 8,
                     VehicleTypeId = 1,
                     CheckInTime = DateTime.Now.AddDays(-1).AddMinutes(-10).AddSeconds(10)
                 },
