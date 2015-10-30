@@ -52,17 +52,17 @@
         <td>
             @Html.ActionLink("Ändra", "Edit", new { id=item.MemberId }) |
             @Html.ActionLink("Detaljer", "Details", new { id=item.MemberId }) |
-            @Html.ActionLink("Ta bort medlem", "Delete", new { id=item.MemberId }) |
+            @Html.ActionLink("Ta bort medlem", "Delete", new { id=item.MemberId }) | 
             @Html.ActionLink("Checka in fordon", "Create", "Vehicles", new { id = item.MemberId }, null) |
             
-            @if (item.Vehicle.Count() > 0)
+            @if (item.Vehicle.Count() >= 1)
             {
                 @Html.ActionLink("Checka ut fordon", "MemberOwnedVehicles", "Vehicles", new { id = item.MemberId }, null)
             }
-            @*else
+            else
             {
-                @Html.DisplayFor("Checka ut fordon")
-            }*@
+                <span class="xxx">Checka ut fordon</span>
+            }
             
         </td>
     </tr>

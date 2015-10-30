@@ -48,11 +48,13 @@ namespace garaget_2.Models {
 
         [Display(Name = "Medlem")]
         public int MemberId { get; set; }
+
         [Display(Name = "Fordonstyp")]
         public int VehicleTypeId { get; set; }
         
         [Display(Name = "Medlem")]
         public virtual Member Member { get; set; }
+
         [Display(Name = "Fordonstyp")]
         public virtual VehicleType VehicleType { get; set; }
     }
