@@ -170,7 +170,7 @@ namespace garaget_2.Controllers
                      || s.Member.FirstName.Contains(searchString) 
                      || s.Member.LastName.Contains(searchString)
                      || s.Model.Contains(searchString)
-                      || s.NrOfWheels.ToString().Contains(searchString));// ToString() = int ;
+                     || s.NrOfWheels.ToString().Contains(searchString));// ToString() = int ;
                }
 
             switch (sortOrder)
