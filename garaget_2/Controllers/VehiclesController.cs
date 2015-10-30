@@ -285,7 +285,7 @@ namespace garaget_2.Controllers
             db.Vehicles.Remove(vehicle);
             db.SaveChanges();
 
-            TempData["vehicle"] = vehicle;
+            //TempData["vehicle"] = vehicle;
          
 
             return RedirectToAction("Receipt", vehicle);
@@ -293,6 +293,8 @@ namespace garaget_2.Controllers
 
         public ActionResult GeneratePDF(Vehicle v)
         {
+            ViewBag.Member = db.Members.Where(m => m.MemberId == v.MemberId).First();
+            ViewBag.VehicleType = db.VehicleTypes.Where(vt => vt.VehicleTypeId == v.VehicleTypeId).First();
             return new Rotativa.ActionAsPdf("Receipt", v)
                                     {
                                         FileName = "Kvitto.pdf",
@@ -306,6 +308,8 @@ namespace garaget_2.Controllers
         
         public ActionResult Receipt(Vehicle v)
         {
+            ViewBag.Member = db.Members.Where(m => m.MemberId == v.MemberId).First();
+            ViewBag.VehicleType = db.VehicleTypes.Where(vt => vt.VehicleTypeId == v.VehicleTypeId).First();
             return View(v);
         }
 
