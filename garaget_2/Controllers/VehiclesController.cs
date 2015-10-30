@@ -149,6 +149,7 @@ namespace garaget_2.Controllers
             ViewBag.ColorSortParm = sortOrder == "Color" ? "Color_desc" : "Color";
             ViewBag.BrandSortParm = sortOrder == "Brand" ? "Brand_desc" : "Brand";
             ViewBag.ModelSortParm = sortOrder == "Model" ? "Model_desc" : "Model";
+            ViewBag.NrOfWheelsSortParm = sortOrder == "NrOfWheels" ? "NrOfWheels_desc" : "NrOfWheels";
             ViewBag.MemberSortParm = sortOrder == "Member" ? "Member_desc" : "Member";
             ViewBag.CheckInTimeSortParm = sortOrder == "CheckInTime" ? "CheckInTime_desc" : "CheckInTime";
 
@@ -164,10 +165,9 @@ namespace garaget_2.Controllers
                      || s.Brand.Contains(searchString)
                      || s.Member.FirstName.Contains(searchString)
                      || s.Member.LastName.Contains(searchString)
-                     || s.Model.Contains(searchString));
-      
-
-            }
+                     || s.Model.Contains(searchString)
+                     || s.NrOfWheels.ToString().Contains(searchString));// ToString() = int ;
+               }
 
             switch (sortOrder)
             {
@@ -213,6 +213,12 @@ namespace garaget_2.Controllers
                     break;
                 case "CheckInTime":
                     vehicles = vehicles.OrderBy(s => s.CheckInTime);
+                    break;
+                case "NrOfWheels_desc":
+                    vehicles = vehicles.OrderByDescending(s => s.NrOfWheels);
+                    break;
+                case "NrOfWheels":
+                    vehicles = vehicles.OrderBy(s => s.NrOfWheels);
                     break;
                 default:
                     vehicles = vehicles.OrderByDescending(s => s.RegNr);
